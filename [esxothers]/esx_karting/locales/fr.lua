@@ -1,0 +1,32 @@
+Locales['fr'] = {
+
+  ['Menu'] = 'Karting Virtuality',
+  ['press_red'] = 'Appuyez sur ~INPUT_CONTEXT~ pour faire partie de l\'équipe rouge',
+  ['press_blue'] = 'Appuyez sur ~INPUT_CONTEXT~ pour faire partie de l\'équipe bleue',
+  ['press_cloakroom'] = 'Appuyez sur ~INPUT_CONTEXT~ pour ouvrir le vestiaire',
+  ['finish'] = 'Vous venez de finir la course',
+  ['start_race'] = 'Commencer la course ',
+  ['cloakroom_kart'] = 'Appuyez sur ~INPUT_CONTEXT~ pour vous changer',
+  ['cloakroom_solo'] = 'Prendre mon casque personelle',
+  ['cloakroom_kart'] = 'Choisir un casque',
+  ['cloakroom_civil'] = 'Recuperer ma tenu personelle ',
+  ['finatime'] = 'Connaitre mon dernier temps',
+  ['starttime'] = 'Vous devez aller lancer le ~b~chrono',
+  ['no_helmet'] = 'Tu n\'as pas de casque tu dois aller en acheter un',
+  ['yourlastetime'] = 'Ton dernier temps est de :~g~ ',
+  ['yourtime'] = 'Tu as fais un temps de :~g~ ',
+  ['seconde'] = '~s~ secondes',
+  ['start'] = 'Départ dans ',
+  ['youhavepay'] = 'Tu viens de payer : ~g~',
+  ['amount'] = 'Connaitre le solde de mon entreprise',
+  ['remove'] = 'Faire en retrait',
+  ['amount_number'] = 'Montant du retrait',
+  ['deposit'] = 'Faire une depot',
+  ['invalid_amount'] = 'Montant invalide',
+  ['remove_money'] = 'Vous venez de retirer : ~g~',
+  ['add_money'] = 'Vous venez de deposer : ~g~',
+  ['Time'] = 'Tu as ',
+  ['Time2'] = ' secondes pour te placer',
+  ['thanks'] = '~h~On dit merci au ~b~DEV~s~ / ~r~Guiyomme~s~ createur du script'
+
+}

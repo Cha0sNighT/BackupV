@@ -1,0 +1,16 @@
+<sOverlayInfos>
+	<overlayInfos>
+		<Item>
+			<nameId>mpAssault_interior_additions</nameId>
+			<changeSet>MPASSAULT_INTERIOR_ADDITIONS</changeSet>
+			<version value="1"/>
+			<changeSetGroupToExecuteWith>GROUP_MAP</changeSetGroupToExecuteWith>
+		</Item>
+		<Item>
+			<nameId>mpAssault_map_update</nameId>
+			<changeSet>MPASSAULT_MAP_UPDATE</changeSet>
+			<version value="1"/>
+			<changeSetGroupToExecuteWith>GROUP_MAP</changeSetGroupToExecuteWith>
+		</Item>
+	</overlayInfos>
+</sOverlayInfos>

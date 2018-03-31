@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fwClipSetManager>
+  <clipSets>
+
+	<!-- STANDARD CAR - ISSI3 -->
+	
+    <Item type="fwClipSet" key="anim@veh@std@issi3@ds@base">
+      <fallbackId />
+      <clipDictionaryName>anim@veh@std@issi3@ds@base</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+    <Item type="fwClipSet" key="anim@veh@std@issi3@ds@idle_panic">
+      <fallbackId>anim@veh@std@issi3@ds@base</fallbackId>
+      <clipDictionaryName>veh@std@ds@idle_panic</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+	<Item type="fwClipSet" key="anim@veh@std@issi3@ds@idle_duck">
+      <fallbackId>anim@veh@std@issi3@ds@base</fallbackId>
+      <clipDictionaryName>veh@std@ds@idle_duck</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+	<Item type="fwClipSet" key="anim@veh@std@issi3@ds@idle_agitated">
+      <fallbackId>anim@veh@std@issi3@ds@base</fallbackId>
+      <clipDictionaryName>veh@std@ds@idle_agitated</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+	
+    <Item type="fwClipSet" key="anim@veh@std@issi3@ps@base">
+      <fallbackId />
+      <clipDictionaryName>anim@veh@std@issi3@ps@base</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+    <Item type="fwClipSet" key="anim@veh@std@issi3@ps@idle_panic">
+      <fallbackId>anim@veh@std@issi3@ps@base</fallbackId>
+      <clipDictionaryName>veh@std@ps@idle_panic</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+	<Item type="fwClipSet" key="anim@veh@std@issi3@ps@idle_duck">
+      <fallbackId>anim@veh@std@issi3@ps@base</fallbackId>
+      <clipDictionaryName>veh@std@ps@idle_duck</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+	
+  </clipSets>
+  <clipDictionaryMetadatas>
+	
+    <Item key="anim@veh@std@issi3@ds@base">
+      <streamingPolicy>SP_STREAMING</streamingPolicy>
+      <memoryGroup>MG_Vehicle</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+	<Item key="anim@veh@std@issi3@ps@base">
+      <streamingPolicy>SP_STREAMING</streamingPolicy>
+      <memoryGroup>MG_Vehicle</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+	
+  </clipDictionaryMetadatas>
+</fwClipSetManager>

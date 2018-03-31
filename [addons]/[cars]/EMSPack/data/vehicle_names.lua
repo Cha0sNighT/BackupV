@@ -1,0 +1,52 @@
+	Citizen.InvokeNative(GetHashKey("ADD_TEXT_ENTRY"), key, value)
+end
+
+Citizen.CreateThread(function()
+	-- AMBULANCE3
+	AddTextEntry('0x9F05F101', 'ambulance3')
+	-- AMBULANCE2
+	AddTextEntry('0x71FA16EA', 'ambulance2')
+	-- EMSCAR
+	AddTextEntry('0x8A63C7B9', 'emscar')
+	-- EMSCAR2
+	AddTextEntry('0x9C32EB57', 'emscar2') 		
+	-- EMSSUV
+	AddTextEntry('0xB2FF98F0', 'emssuv') 	
+	-- EMSVAN
+	AddTextEntry('0xD0AF544F', 'emsvan')
+	-- AMBUMAV
+	AddTextEntry('0x9F05F101', 'ambulmav')
+	-- ARMYANHI
+	AddTextEntry('0x71FA16EA', 'armyannihilator2')
+	-- BATTALTION
+	AddTextEntry('0x8A63C7B9', 'battalion')
+	-- BATTALION2
+	AddTextEntry('0x9C32EB57', 'battalion2') 		
+	-- BOAR
+	AddTextEntry('0xB2FF98F0', 'boar') 	
+	-- CGPREDATOR
+	AddTextEntry('0xD0AF544F', 'cgpredator')
+	-- FBI3
+	AddTextEntry('0x9F05F101', 'fbi3')
+	-- FBI4
+	AddTextEntry('0x71FA16EA', 'fbi4')
+	-- FBI5
+	AddTextEntry('0x8A63C7B9', 'fbi5')
+	-- FBIFROGGER
+	AddTextEntry('0x9C32EB57', 'fbifrogger') 		
+	-- FBIINSURGENT
+	AddTextEntry('0xB2FF98F0', 'fbiinsurgent') 	
+	-- FIRETRUCK1
+	AddTextEntry('0xD0AF544F', 'firetruk1')	
+	-- POLICE21
+	AddTextEntry('0x9F05F101', 'police21')
+	-- POLICE41
+	AddTextEntry('0x71FA16EA', 'police41')
+	-- POLICE42
+	AddTextEntry('0x8A63C7B9', 'police42')
+	-- POLICE43
+	AddTextEntry('0x9C32EB57', 'police43') 		
+	-- POLICE44
+	AddTextEntry('0xB2FF98F0', 'police44') 	
+	-- USAMERIT
+	AddTextEntry('0xD0AF544F', 'usafmerit')

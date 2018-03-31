@@ -1,0 +1,5 @@
+AddEventHandler("playerSpawned", function(spawn)
+TriggerEvent("chatMessage", "", { 255, 0, 0 }, "Bienvenue sur Virtuality")
+TriggerEvent("chatMessage", "", { 255, 0, 0 }, "N'hésitez pas à passer sur le discord pour lire les règles")
+TriggerEvent("chatMessage", "", { 255, 0, 0 }, "discord.gg/QubU4hH")
+end)

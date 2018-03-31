@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FirstPersonAlternateData>
+    <alternates>
+<!-- Female -->
+		<Item>
+            <assetName>MP_F_Freemode_01_mp_f_assault/jbib_000_u</assetName>
+            <alternate value="1" />
+        </Item>
+<!-- Male -->
+		<Item>
+            <assetName>MP_M_Freemode_01_mp_m_assault/jbib_000_u</assetName>
+            <alternate value="1" />
+        </Item>
+    </alternates>
+</FirstPersonAlternateData>

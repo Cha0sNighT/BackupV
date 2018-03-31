@@ -1,0 +1,870 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CAlternateVariations>
+    <peds>
+<!-- ******************************************************************************************************** -->
+<!-- ****************************** Female ****************************************************************** -->
+<!-- ******************************************************************************************************** -->		
+		<Item>
+            <name>mp_f_freemode_01</name> <!-- mp_f_freemode_01 -->
+            <switches>
+<!-- female heist bags jbib setup -->
+<!-- heist hand_000 -->                           
+                <Item>
+					<dlcNameHash>Female_heist</dlcNameHash>
+                    <component value="5" /> <!-- hand_ ... -->
+                    <index value="0" /> <!-- ... 000_ ... -->
+                    <alt value="23" /> <!-- ... 23 -->
+                    <sourceAssets>					
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+<!-- heist hand_001 --> 
+                <Item>
+					<dlcNameHash>Female_heist</dlcNameHash>
+                    <component value="5" /> <!-- hand_ ... -->
+                    <index value="1" /> <!-- ... 001_ ... -->
+                    <alt value="23" /> <!-- ... 23 -->
+                    <sourceAssets>					
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+<!-- heist hand_004 --> 
+                <Item>
+					<dlcNameHash>Female_heist</dlcNameHash>
+                    <component value="5" /> <!-- hand_ ... -->
+                    <index value="4" /> <!-- ... 004_ ... -->
+                    <alt value="23" /> <!-- ... 23 -->
+                    <sourceAssets>					
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+<!-- heist hand_005 --> 
+                <Item>
+					<dlcNameHash>Female_heist</dlcNameHash>
+                    <component value="5" /> <!-- hand_ ... -->
+                    <index value="5" /> <!-- ... 005_ ... -->
+                    <alt value="23" /> <!-- ... 23 -->
+                    <sourceAssets>					
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				
+			<!-- Female Prior DLC Balaclava fit -->
+			<!-- Heist -->
+				<Item>
+					<dlcNameHash>Female_heist</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="0" /> <!-- 000_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+				</Item>
+				<Item>
+					<dlcNameHash>Female_heist</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="2" /> <!-- 002_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+				</Item>
+				<Item>
+					<dlcNameHash>Female_heist</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="17" /> <!-- 017_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>Female_heist</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="18" /> <!-- 018_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>Female_heist</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="19" /> <!-- 019_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>Female_heist</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="20" /> <!-- 020_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>Female_heist</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="21" /> <!-- 021_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>Female_heist</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="22" /> <!-- 022_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>Female_heist</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="23" /> <!-- 023_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+			<!-- Stunt -->
+				<Item>
+					<dlcNameHash>mp_f_stunt_01</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="0" /> <!-- 000_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+				</Item>
+			<!-- Gunrunning -->
+				<Item>
+					<dlcNameHash>mp_f_gunrunning_01</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="1" /> <!-- 001_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+				</Item>
+				<Item>
+					<dlcNameHash>mp_f_gunrunning_01</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="3" /> <!-- 003_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+				</Item>
+			<!-- Smuggler -->
+				<Item>
+					<dlcNameHash>mp_f_smuggler_01</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="0" /> <!-- 000_U -->
+                    <alt value="1" /> <!--_1 -->
+                    <sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>mp_f_smuggler_01</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="2" /> <!-- 002_U -->
+                    <alt value="1" /> <!--_1 -->
+                    <sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>mp_f_smuggler_01</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="3" /> <!-- 003_U -->
+                    <alt value="1" /> <!--_1 -->
+                    <sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>mp_f_smuggler_01</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="7" /> <!-- 007_U -->
+                    <alt value="1" /> <!--_1 -->
+                    <sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>mp_f_smuggler_01</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="8" /> <!-- 008_U -->
+                    <alt value="1" /> <!--_1 -->
+                    <sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>mp_f_smuggler_01</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="9" /> <!-- 009_U -->
+                    <alt value="1" /> <!--_1 -->
+                    <sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+			<!-- Christmas2017 -->
+				<Item>
+					<dlcNameHash>mp_f_christmas2017</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="1" /> <!-- 001_U -->
+                    <alt value="1" /> <!--_1 -->
+                    <sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>mp_f_christmas2017</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="4" /> <!-- 004_U -->
+                    <alt value="1" /> <!--_1 -->
+                    <sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>mp_f_christmas2017</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="5" /> <!-- 005_U -->
+                    <alt value="1" /> <!--_1 -->
+                    <sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>mp_f_christmas2017</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="8" /> <!-- 008_U -->
+                    <alt value="1" /> <!--_1 -->
+                    <sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>mp_f_christmas2017</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="9" /> <!-- 009_U -->
+                    <alt value="1" /> <!--_1 -->
+                    <sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>mp_f_christmas2017</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="11" /> <!-- 011_U -->
+                    <alt value="1" /> <!--_1 -->
+                    <sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_f_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+			</switches>
+		</Item>
+<!-- ******************************************************************************************************** -->
+<!-- ****************************** Male ******************************************************************** -->
+<!-- ******************************************************************************************************** -->		
+		<Item>
+            <name>mp_m_freemode_01</name> <!-- mp_m_freemode_01 -->
+            <switches>
+			<!-- heist bags jbib setup -->
+			<!-- heist hand_000 -->
+                <Item>
+					<dlcNameHash>Male_heist</dlcNameHash>
+                    <component value="5" /> <!-- hand_ ... -->
+                    <index value="0" /> <!-- ... 000_ ... -->
+                    <alt value="5" /> <!-- ... 5 -->
+                    <sourceAssets>					
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+			<!-- heist hand_001 -->
+                <Item>
+					<dlcNameHash>Male_heist</dlcNameHash>
+                    <component value="5" /> <!-- hand_ ... -->
+                    <index value="1" /> <!-- ... 001_ ... -->
+                    <alt value="5" /> <!-- ... 5 -->
+                    <sourceAssets>					
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+			<!-- heist hand_004 -->
+                <Item>
+					<dlcNameHash>Male_heist</dlcNameHash>
+                    <component value="5" /> <!-- hand_ ... -->
+                    <index value="4" /> <!-- ... 004_ ... -->
+                    <alt value="5" /> <!-- ... 5 -->
+                    <sourceAssets>					
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+			<!-- heist hand_005 -->
+                <Item>
+					<dlcNameHash>Male_heist</dlcNameHash>
+                    <component value="5" /> <!-- hand_ ... -->
+                    <index value="5" /> <!-- ... 005_ ... -->
+                    <alt value="5" /> <!-- ... 5 -->
+                    <sourceAssets>					
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+			<!-- Male Prior DLC Balaclava fit -->
+			<!-- Heist -->
+				<Item>
+					<dlcNameHash>Male_heist</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="0" /> <!-- 000_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>Male_heist</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="2" /> <!-- 002_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>Male_heist</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="17" /> <!-- 017_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Christmas2017 -->
+						<Item>
+							<dlcNameHash>mp_m_christmas2017</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+						<Item>
+							<dlcNameHash>mp_m_christmas2017</dlcNameHash>
+                            <component value="11" /> <!-- jbib_001 -->
+                            <index value="1" />
+						</Item>
+						<Item>
+							<dlcNameHash>mp_m_christmas2017</dlcNameHash>
+                            <component value="11" /> <!-- jbib_002 -->
+                            <index value="2" />
+						</Item>
+						<Item>
+							<dlcNameHash>mp_m_christmas2017</dlcNameHash>
+                            <component value="11" /> <!-- jbib_003 -->
+                            <index value="3" />
+						</Item>
+						<Item>
+							<dlcNameHash>mp_m_christmas2017</dlcNameHash>
+                            <component value="11" /> <!-- jbib_004 -->
+                            <index value="4" />
+						</Item>
+						<Item>
+							<dlcNameHash>mp_m_christmas2017</dlcNameHash>
+                            <component value="11" /> <!-- jbib_006 -->
+                            <index value="6" />
+						</Item>
+						<Item>
+							<dlcNameHash>mp_m_christmas2017</dlcNameHash>
+                            <component value="11" /> <!-- jbib_007 -->
+                            <index value="7" />
+						</Item>
+						<Item>
+							<dlcNameHash>mp_m_christmas2017</dlcNameHash>
+                            <component value="11" /> <!-- jbib_008 -->
+                            <index value="8" />
+						</Item>
+						<Item>
+							<dlcNameHash>mp_m_christmas2017</dlcNameHash>
+                            <component value="11" /> <!-- jbib_009 -->
+                            <index value="9" />
+						</Item>
+						<Item>
+							<dlcNameHash>mp_m_christmas2017</dlcNameHash>
+                            <component value="11" /> <!-- jbib_010 -->
+                            <index value="10" />
+						</Item>
+						<Item>
+							<dlcNameHash>mp_m_christmas2017</dlcNameHash>
+                            <component value="11" /> <!-- jbib_012 -->
+                            <index value="12" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>Male_heist</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="18" /> <!-- 018_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>Male_heist</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="19" /> <!-- 019_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>Male_heist</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="20" /> <!-- 020_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>Male_heist</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="21" /> <!-- 021_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>Male_heist</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="22" /> <!-- 022_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>Male_heist</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="23" /> <!-- 023_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+			<!-- Stunt -->
+				<Item>
+					<dlcNameHash>mp_m_stunt_01</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="0" /> <!-- 000_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+			<!-- Gunrunning -->
+				<Item>
+					<dlcNameHash>mp_m_gunrunning_01</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="1" /> <!-- 001_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>mp_m_gunrunning_01</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="3" /> <!-- 003_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+				</Item>
+			<!-- Smuggler -->
+				<Item>
+					<dlcNameHash>mp_m_smuggler_01</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="0" /> <!-- 000_U -->
+                    <alt value="1" /> <!--_1 -->
+                    <sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>mp_m_smuggler_01</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="2" /> <!-- 002_U -->
+                    <alt value="1" /> <!--_1 -->
+                    <sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>mp_m_smuggler_01</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="3" /> <!-- 003_U -->
+                    <alt value="1" /> <!--_1 -->
+                    <sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>mp_m_smuggler_01</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="7" /> <!-- 007_U -->
+                    <alt value="1" /> <!--_1 -->
+                    <sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>mp_m_smuggler_01</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="8" /> <!-- 008_U -->
+                    <alt value="1" /> <!--_1 -->
+                    <sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+				<Item>
+					<dlcNameHash>mp_m_smuggler_01</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="9" /> <!-- 009_U -->
+                    <alt value="1" /> <!--_1 -->
+                    <sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+                </Item>
+			<!-- Christmas2017 -->
+				<Item>
+					<dlcNameHash>mp_m_christmas2017</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="1" /> <!-- 001_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+				</Item>
+				<Item>
+					<dlcNameHash>mp_m_christmas2017</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="4" /> <!-- 004_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+				</Item>
+				<Item>
+					<dlcNameHash>mp_m_christmas2017</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="5" /> <!-- 005_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+				</Item>
+				<Item>
+					<dlcNameHash>mp_m_christmas2017</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="8" /> <!-- 008_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+				</Item>
+				<Item>
+					<dlcNameHash>mp_m_christmas2017</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="9" /> <!-- 009_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+				</Item>
+				<Item>
+					<dlcNameHash>mp_m_christmas2017</dlcNameHash>
+                    <component value="1" /> <!-- Berd_ -->
+                    <index value="11" /> <!-- 011_U -->
+                    <alt value="1" /> <!--_1 -->
+					<sourceAssets>
+					<!-- Assault -->
+						<Item>
+							<dlcNameHash>mp_m_assault</dlcNameHash>
+                            <component value="11" /> <!-- jbib_000 -->
+                            <index value="0" />
+						</Item>
+                    </sourceAssets>
+				</Item>
+			</switches>
+		</Item>
+	</peds>
+</CAlternateVariations>

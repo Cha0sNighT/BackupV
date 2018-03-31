@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ShopVehicleDataArray>
+  <Vehicles>
+   	<Item>
+	  <lockHash>CU_VEH_CARACARA</lockHash>
+	  <modelNameHash>caracara</modelNameHash>
+	  <cost value="100"/>
+	  <textLabel>CARACARA</textLabel>
+	  <vehicleMods></vehicleMods>
+	</Item>
+   	<Item>
+	  <lockHash>CU_VEH_CHEBUREK</lockHash>
+	  <modelNameHash>cheburek</modelNameHash>
+	  <cost value="100"/>
+	  <textLabel>CHEBUREK</textLabel>
+	  <vehicleMods></vehicleMods>
+	</Item>
+   	<Item>
+	  <lockHash>CU_VEH_DOMINATOR3</lockHash>
+	  <modelNameHash>dominator3</modelNameHash>
+	  <cost value="100"/>
+	  <textLabel>DOMINATOR3</textLabel>
+	  <vehicleMods></vehicleMods>
+	</Item>
+   	<Item>
+	  <lockHash>CU_VEH_ELLIE</lockHash>
+	  <modelNameHash>ellie</modelNameHash>
+	  <cost value="100"/>
+	  <textLabel>ELLIE</textLabel>
+	  <vehicleMods></vehicleMods>
+	</Item>
+   	<Item>
+	  <lockHash>CU_VEH_ENTITY2</lockHash>
+	  <modelNameHash>entity2</modelNameHash>
+	  <cost value="100"/>
+	  <textLabel>ENTITY2</textLabel>
+	  <vehicleMods></vehicleMods>
+	</Item>
+   	<Item>
+	  <lockHash>CU_VEH_FAGALOA</lockHash>
+	  <modelNameHash>fagaloa</modelNameHash>
+	  <cost value="100"/>
+	  <textLabel>FAGALOA</textLabel>
+	  <vehicleMods></vehicleMods>
+	</Item>
+   	<Item>
+	  <lockHash>CU_VEH_FLASHGT</lockHash>
+	  <modelNameHash>flashgt</modelNameHash>
+	  <cost value="100"/>
+	  <textLabel>FLASHGT</textLabel>
+	  <vehicleMods></vehicleMods>
+	</Item>
+  	<Item>
+	  <lockHash>CU_VEH_GB200</lockHash>
+	  <modelNameHash>gb200</modelNameHash>
+	  <cost value="100"/>
+	  <textLabel>GB200</textLabel>
+	  <vehicleMods></vehicleMods>
+	</Item>
+  	<Item>
+	  <lockHash>CU_VEH_HOTRING</lockHash>
+	  <modelNameHash>hotring</modelNameHash>
+	  <cost value="100"/>
+	  <textLabel>HOTRING</textLabel>
+	  <vehicleMods></vehicleMods>
+	</Item>
+	<Item>
+	  <lockHash>CU_VEH_ISSI3</lockHash>
+	  <modelNameHash>issi3</modelNameHash>
+	  <cost value="100"/>
+	  <textLabel>ISSI3</textLabel>
+	  <vehicleMods></vehicleMods>
+	</Item>
+	<Item>
+	  <lockHash>CU_VEH_JESTER3</lockHash>
+	  <modelNameHash>jester3</modelNameHash>
+	  <cost value="100"/>
+	  <textLabel>JESTER3</textLabel>
+	  <vehicleMods></vehicleMods>
+	</Item>
+  	<Item>
+	  <lockHash>CU_VEH_MICHELLI</lockHash>
+	  <modelNameHash>michelli</modelNameHash>
+	  <cost value="100"/>
+	  <textLabel>MICHELLI</textLabel>
+	  <vehicleMods></vehicleMods>
+	</Item>
+  	<Item>
+	  <lockHash>CU_VEH_SEASPARROW</lockHash>
+	  <modelNameHash>seasparrow</modelNameHash>
+	  <cost value="100"/>
+	  <textLabel>SPARROW</textLabel>
+	  <vehicleMods></vehicleMods>
+	</Item>
+  	<Item>
+	  <lockHash>CU_VEH_TAIPAN</lockHash>
+	  <modelNameHash>taipan</modelNameHash>
+	  <cost value="100"/>
+	  <textLabel>TAIPAN</textLabel>
+	  <vehicleMods></vehicleMods>
+	</Item>
+  	<Item>
+	  <lockHash>CU_VEH_TEZERACT</lockHash>
+	  <modelNameHash>tezeract</modelNameHash>
+	  <cost value="100"/>
+	  <textLabel>TEZERACT</textLabel>
+	  <vehicleMods></vehicleMods>
+	</Item>
+  	<Item>
+	  <lockHash>CU_VEH_TYRANT</lockHash>
+	  <modelNameHash>tyrant</modelNameHash>
+	  <cost value="100"/>
+	  <textLabel>TYRANT</textLabel>
+	  <vehicleMods></vehicleMods>
+	</Item>
+  </Vehicles>	
+</ShopVehicleDataArray>

@@ -1,0 +1,21 @@
+Locales['fr'] = {
+
+	['used_beer'] = 'Vous avez bu 1x ~y~Bière~s~',
+	['used_wine'] = 'Vous avez bu 1x ~y~Vin~s~',
+	['used_vodka'] = 'Vous avez bu 1x ~y~Vodka~s~',
+	['used_tequila'] = 'Vous avez bu 1x ~y~Tequila~s~',
+	['used_whisky'] = 'Vous avez bu 1x ~y~Whisky~s~',
+	['used_martini'] = 'Vous avez utilisé 1x ~y~Martini~s~',
+	['used_whiskycoca'] = 'Vous avez utilisé 1x ~y~Whisky Coca~s~',
+	['used_vodkaenergy'] = 'Vous avez utilisé 1x ~y~Vodka Energy~s~',
+	['used_vodkafruit'] = 'Vous avez utilisé 1x ~y~Vodka Fruit~s~',
+	['used_rhumfruit'] = 'Vous avez utilisé 1x ~y~Rhum Fruit~s~',
+	['used_teqpaf'] = 'Vous avez utilisé 1x ~y~Teq Paf~s~',
+	['used_rhumcoca'] = 'Vous avez utilisé 1x ~y~Rhum Coca~s~',
+	['used_mojito'] = 'Vous avez utilisé 1x ~y~Mojito~s~',
+	['used_jagercerbere'] = 'Vous avez utilisé 1x ~y~Jager Cerbere~s~',
+	['used_metreshooter'] = 'Vous avez utilisé 1x ~y~Mètre de shooters~s~',
+	['used_golem'] = 'Vous avez utilisé 1x ~y~Golem~s~',
+	['used_jager'] = 'Vous avez utilisé 1x ~y~Jägermeister~s~',
+	['used_rhum'] = 'Vous avez utilisé 1x ~y~Rhum~s~',
+}
