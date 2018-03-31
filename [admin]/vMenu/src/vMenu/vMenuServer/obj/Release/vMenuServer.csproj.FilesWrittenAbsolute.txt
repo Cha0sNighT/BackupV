@@ -1,0 +1,9 @@
+/home/travis/build/TomGrobbe/vMenu/vMenuServer/obj/Release/.NETFramework,Version=v4.6.1.AssemblyAttribute.cs
+/home/travis/build/TomGrobbe/vMenu/vMenuServer/bin/Release/config/addons.json
+/home/travis/build/TomGrobbe/vMenu/vMenuServer/bin/Release/config/permissions.cfg
+/home/travis/build/TomGrobbe/vMenu/vMenuServer/bin/Release/System.Numerics.dll
+/home/travis/build/TomGrobbe/vMenu/vMenuServer/bin/Release/vMenuServer.net.pdb
+/home/travis/build/TomGrobbe/vMenu/vMenuServer/bin/Release/vMenuServer.net.dll
+/home/travis/build/TomGrobbe/vMenu/vMenuServer/obj/Release/vMenuServer.net.dll
+/home/travis/build/TomGrobbe/vMenu/vMenuServer/obj/Release/vMenuServer.net.pdb
+/home/travis/build/TomGrobbe/vMenu/vMenuServer/bin/Release/Newtonsoft.Json.dll
