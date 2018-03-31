@@ -139,14 +139,7 @@ function ListVehiclesMenu()
 				menu.close()
 				SpawnVehicle(data.current.value.vehicle)
 			else
-				--TriggerEvent('esx:showNotification', 'Your vehicle is already out')
-				TriggerEvent("pNotify:SendNotification",{
-					text = "Garagiste : <br /> Votre véhicule est déjà sorti !",
-					type = "success",
-					timeout = (5000),
-					layout = "centerLeft",
-					queue = "global"
-				})
+				TriggerEvent('esx:showNotification', 'Votre véhicule est déjà sorti !')
 			end
 		end,
 		function(data, menu)
@@ -172,34 +165,14 @@ function StockVehicleMenu()
 				TriggerServerEvent('eden_garage:debug', vehicle)
 				DeleteVehicle(vehicle)
 				TriggerServerEvent('eden_garage:modifystate', vehicleProps, true)
-				--TriggerEvent('esx:showNotification', 'Your car is in the garage')
-				TriggerEvent("pNotify:SendNotification",{
-					text = "Garagiste : <br /> Votre véhicule est dans le garage !",
-					type = "success",
-					timeout = (5000),
-					layout = "centerLeft",
-					queue = "global"
-				})
+				TriggerEvent('esx:showNotification', 'Votre véhicule est dans le garage !')
+
 			else
-				--TriggerEvent('esx:showNotification', 'Your car is in the garage')
-				TriggerEvent("pNotify:SendNotification",{
-					text = "Garage Notification : <br /> Ce véhicule n'est pas le votre !",
-					type = "success",
-					timeout = (5000),
-					layout = "centerLeft",
-					queue = "global"
-				})
+				TriggerEvent('esx:showNotification', "Ce véhicule n'est pas le votre !")
 			end
 		end,vehicleProps)
 	else
-		--TriggerEvent('esx:showNotification', 'Your car needs to be in the red dot')
-		TriggerEvent("pNotify:SendNotification",{
-			text = "Garagiste : <br /> Votre voiture doit être sur le marqueur blanc ou rouge !",
-			type = "success",
-			timeout = (5000),
-			layout = "centerLeft",
-			queue = "global"
-		})
+		TriggerEvent('esx:showNotification', 'Votre véhicule doit être sur le marqueur blanc ou rouge !')
 	end
 
 end
@@ -215,11 +188,17 @@ function SpawnVehicle(vehicle)
 		y = this_Garage.SpawnPoint.Pos.y,
 		z = this_Garage.SpawnPoint.Pos.z + 1
 	},this_Garage.SpawnPoint.Heading, function(callback_vehicle)
-		SetVehRadioStation(callback_vehicle, "OFF")
+		if this_Garage.SpawnPoint.TP == true then
+			SetVehRadioStation(callback_vehicle, "OFF")
     	TaskWarpPedIntoVehicle(GetPlayerPed(-1), callback_vehicle, -1)
-		ESX.Game.SetVehicleProperties(callback_vehicle, vehicle)
-
-		end)
+			ESX.Game.SetVehicleProperties(callback_vehicle, vehicle)
+			TriggerEvent('esx:showNotification', 'Bonne route !')
+		else
+			SetVehRadioStation(callback_vehicle, "OFF")
+			ESX.Game.SetVehicleProperties(callback_vehicle, vehicle)
+			TriggerEvent('esx:showNotification', 'Votre véhicule vous attend devant !')
+		end
+	end)
 
 	TriggerServerEvent('eden_garage:modifystate', vehicle, false)
 
