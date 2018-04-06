@@ -4,7 +4,6 @@ client_scripts {
 	'NoMoreWeaponsOnNPC.lua',
 	'NoWeaponReward.lua',
 	'FixTrafic.lua',
-	'NoLicense.lua',
 	'BreakingNews.lua',
 	'NoDrivingCopCar.lua'
 }

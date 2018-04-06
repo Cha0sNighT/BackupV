@@ -10,16 +10,16 @@ Config.RequiredCopsOpium = 2
 Config.Locale = 'fr'
 
 Config.Zones = {
-	CokeFarm = 		 {x=2847.98,  y=-119.4, z=2.84},  --OK
-	CokeTreatment =  {x=1093.05, y=-3194.92, z=-38.99}, --OK
-	CokeResell = 	 {x=-583.08, y=227.84,  z=79.24},--OK
-	MethFarm = 		 {x=1134.14, 	 y=-442.53,  z=66.49}, --OK
-	MethTreatment =  {x=1010.21, y=-3196.32,  z=-38.99}, --OK
-	MethResell = 	 {x=357.5, y=-1886.16, z=25.17}, --OK
-	WeedFarm = 		 {x=1057.62, y=-3197.27,  z=-39.13}, --OK
-	WeedTreatment =  {x=1039.23,  y=-3205.39,  z=-38.17}, --OK
-	WeedResell = 	 {x=1360.74, y=-1556.33, z=55.34},--OK
-	OpiumFarm = 	 {x=1165.71,	 y=-3196.5,  z=-39.01}, --OK
-	OpiumTreatment = {x=1157.9, y=-3192.69, z=-39.01}, --OK
-	OpiumResell = 	 {x=-68.14, y=6253.78, z=31.09}--OK
+	CokeFarm = 		 {x=1719.30,  y=6587.74, z=36.15},  --OK 04/04/18
+	CokeTreatment =  {x=1093.05, y=-3194.92, z=-38.99}, --OK PAS CHANGER
+	CokeResell = 	 {x=-1500.31, y=103.22,  z=55.14},--OK 04/04/18
+	MethFarm = 		 {x=-664.32, 	 y=313.49,  z=82.59}, --OK 04/04/18
+	MethTreatment =  {x=1010.21, y=-3196.32,  z=-38.99}, --OK PAS CHANGER
+	MethResell = 	 {x=269.41, y=-1713.1, z=29.17}, --OK 04/04/18
+	WeedFarm = 		 {x=1057.62, y=-3197.27,  z=-39.13}, --OK PAS CHANGER
+	WeedTreatment =  {x=1039.23,  y=-3205.39,  z=-38.17}, --OK PAS CHANGER
+	WeedResell = 	 {x=-502.97, y=32.33, z=44.21},--OK 04/04/18
+	OpiumFarm = 	 {x=1165.71,	 y=-3196.5,  z=-39.01}, --OK PAS CHANGER
+	OpiumTreatment = {x=1157.9, y=-3192.69, z=-39.01}, --OK PAS CHANGER
+	OpiumResell = 	 {x=484.48, y=-3112.06, z=5.83}--OK 04/04/18
 }

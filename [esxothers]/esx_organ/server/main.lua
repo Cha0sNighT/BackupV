@@ -39,7 +39,7 @@ local function HarvestCerveau(source)
 
 	SetTimeout(5000, function()
 
-		if PlayersHarvestingCerveau[source] == true then 
+		if PlayersHarvestingCerveau[source] == true then
 
 			local xPlayer  = ESX.GetPlayerFromId(source)
 
@@ -85,7 +85,7 @@ local function HarvestCoeur(source)
 		TriggerClientEvent('esx:showNotification', source, _U('act_imp_police') .. CopsConnected .. '/' .. Config.RequiredCopsCoeur)
 		return
 	end
-	
+
 	SetTimeout(5000, function()
 
 		if PlayersHarvestingCoeur[source] == true then
@@ -304,7 +304,7 @@ local function TransformOrgan(source)
                 xPlayer.removeInventoryItem('intestin', 11)
 
                 xPlayer.addInventoryItem('organ_pooch', 1)
-            
+
                 TransformOrgan(source)
             else
                 TriggerClientEvent('esx:showNotification', source, _U('not_enough_organ'))
@@ -355,25 +355,25 @@ local function SellBody(source)
 			else
 				xPlayer.removeInventoryItem('organ_pooch', 1)
 				if CopsConnected == 0 then
-                    xPlayer.addAccountMoney('black_money', 30800)
+                    xPlayer.addAccountMoney('black_money', 30000)
                     TriggerClientEvent('esx:showNotification', source, _U('sold_one_body'))
                 elseif CopsConnected == 1 then
-                    xPlayer.addAccountMoney('black_money', 40000)
+                    xPlayer.addAccountMoney('black_money', 30000)
                     TriggerClientEvent('esx:showNotification', source, _U('sold_one_body'))
                 elseif CopsConnected == 2 then
-                    xPlayer.addAccountMoney('black_money', 52000)
+                    xPlayer.addAccountMoney('black_money', 40000)
                     TriggerClientEvent('esx:showNotification', source, _U('sold_one_body'))
                 elseif CopsConnected == 3 then
-                    xPlayer.addAccountMoney('black_money', 64000)
+                    xPlayer.addAccountMoney('black_money', 40000)
                     TriggerClientEvent('esx:showNotification', source, _U('sold_one_body'))
                 elseif CopsConnected == 4 then
-                    xPlayer.addAccountMoney('black_money', 76000)
+                    xPlayer.addAccountMoney('black_money', 50000)
                     TriggerClientEvent('esx:showNotification', source, _U('sold_one_body'))
                 elseif CopsConnected >= 5 then
-                    xPlayer.addAccountMoney('black_money', 99000)  
+                    xPlayer.addAccountMoney('black_money', 60000)
                     TriggerClientEvent('esx:showNotification', source, _U('sold_one_body'))
                 end
-				
+
 				SellBody(source)
 			end
 
@@ -409,15 +409,15 @@ RegisterServerEvent('esx_organ:GetUserInventory')
 AddEventHandler('esx_organ:GetUserInventory', function(currentZone)
 	local _source = source
     local xPlayer  = ESX.GetPlayerFromId(_source)
-    TriggerClientEvent('esx_organ:ReturnInventory', 
-    	_source, 
-    	xPlayer.getInventoryItem('cerveau').count, 
-		xPlayer.getInventoryItem('coeur').count,  
-		xPlayer.getInventoryItem('moelle').count,  
+    TriggerClientEvent('esx_organ:ReturnInventory',
+    	_source,
+    	xPlayer.getInventoryItem('cerveau').count,
+		xPlayer.getInventoryItem('coeur').count,
+		xPlayer.getInventoryItem('moelle').count,
 		xPlayer.getInventoryItem('intestin').count,
-		xPlayer.getInventoryItem('os').count, 
+		xPlayer.getInventoryItem('os').count,
 		xPlayer.getInventoryItem('organ_pooch').count,
-		xPlayer.job.name, 
+		xPlayer.job.name,
 		currentZone
     )
 end)

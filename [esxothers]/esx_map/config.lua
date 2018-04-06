@@ -1,7 +1,6 @@
 Config = {}
 
 Config.Map = {
-  {name="Tequil-La La",color=27, id=93, x=-565.906, y=276.093, z=100.176},
   {name="Bahamas",color=27, id=93,x =-1388.409, y =-585.624, z =100.319},
   {name="Yellow Jack",color=27, id=93,x =1992.69, y =3058.57, z =100.319},
   {name="Garage Los Santos",color=3, id=290,x=56.31, y=-876.53, z=30.01},

@@ -26,6 +26,96 @@ local hintToDisplay           = "no hint to display"
 
 ESX                           = nil
 
+doorList = {
+    -- Front Door
+    [1] = { ["objName"] = "prop_strip_door_01", ["x"]= 127.9552, ["y"]= -1298.503,["z"]= 29.41962,["locked"]= true,["txtX"]=128.4552,["txtY"]=-1298.803,["txtZ"]=29.61962},
+    -- Back Door
+    [2] = { ["objName"] = "prop_magenta_door", ["x"]= 96.09197, ["y"]= -1284.854,["z"]= 29.43878,["locked"]= true,["txtX"]=95.59197,["txtY"]=-1285.154,["txtZ"]=29.63878},
+}
+
+function DrawText3d(x,y,z, text)
+    local onScreen,_x,_y=World3dToScreen2d(x,y,z)
+    local px,py,pz=table.unpack(GetGameplayCamCoords())
+
+    if onScreen then
+        SetTextScale(0.2, 0.2)
+        SetTextFont(0)
+        SetTextProportional(1)
+        SetTextColour(255, 255, 255, 255)
+        SetTextDropshadow(0, 0, 0, 0, 55)
+        SetTextEdge(2, 0, 0, 0, 150)
+        SetTextDropShadow()
+        SetTextOutline()
+        SetTextEntry("STRING")
+        SetTextCentre(1)
+        AddTextComponentString(text)
+        DrawText(_x,_y)
+    end
+end
+
+Citizen.CreateThread(function()
+
+
+    while true do
+		Citizen.Wait(0)
+			for i = 1, #doorList do
+				local playerCoords = GetEntityCoords( GetPlayerPed(-1) )
+				local closeDoor = GetClosestObjectOfType(doorList[i]["x"], doorList[i]["y"], doorList[i]["z"], 1.0, GetHashKey(doorList[i]["objName"]), false, false, false)
+
+				local objectCoordsDraw = GetEntityCoords( closeDoor )
+				local playerDistance = GetDistanceBetweenCoords(playerCoords.x, playerCoords.y, playerCoords.z, doorList[i]["x"], doorList[i]["y"], doorList[i]["z"], true)
+
+				if(playerDistance < 1.2) and PlayerData.job.name == 'unicorn' then
+
+					if doorList[i]["locked"] == true then
+						DrawText3d(doorList[i]["txtX"], doorList[i]["txtY"], doorList[i]["txtZ"], "[E] to unlock door")
+					else
+						DrawText3d(doorList[i]["txtX"], doorList[i]["txtY"], doorList[i]["txtZ"], "[E] to lock door")
+					end
+
+					if IsControlJustPressed(1,51) then
+						if doorList[i]["locked"] == true then
+							FreezeEntityPosition(closeDoor, false)
+							if(i==10 or i==11) then
+								TriggerServerEvent('unicorn:LockDoor', 10, false)
+								TriggerServerEvent('unicorn:LockDoor', 11, false)
+							elseif(i==12 or i==13) then
+								TriggerServerEvent('unicorn:LockDoor', 12, false)
+								TriggerServerEvent('unicorn:LockDoor', 13, false)
+							else
+								TriggerServerEvent('unicorn:LockDoor', i, false)
+							end
+						else
+							FreezeEntityPosition(closeDoor, true)
+							if(i==10 or i==11) then
+								TriggerServerEvent('unicorn:LockDoor', 10, true)
+								TriggerServerEvent('unicorn:LockDoor', 11, true)
+							elseif(i==12 or i==13) then
+								TriggerServerEvent('unicorn:LockDoor', 12, true)
+								TriggerServerEvent('unicorn:LockDoor', 13, true)
+							else
+								TriggerServerEvent('unicorn:LockDoor', i, true)
+							end
+						end
+					end
+				else
+					FreezeEntityPosition(closeDoor, doorList[i]["locked"])
+				end
+			end
+    end
+end)
+
+RegisterNetEvent('unicorn:LockDoor')
+AddEventHandler('unicorn:LockDoor', function(door, bool)
+	doorList[door]["locked"] = bool
+end)
+
+AddEventHandler("playerSpawned", function()
+	ESX.TriggerServerCallback('unicorn:checkDoor', function(doors)
+		doorList = doors
+	end)
+end)
+
 Citizen.CreateThread(function()
   while ESX == nil do
     TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)

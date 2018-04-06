@@ -149,7 +149,7 @@ Config.Jobs.brewer = {
           time = 500,
           remove = 1,
           max = 100, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
-          price = 15,
+          price = 3,
           requires = "beer",
           requires_name = _U('b_beer'),
           drop = 100

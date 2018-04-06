@@ -35,9 +35,9 @@ AddEventHandler("tattoos:save", function(tattoosList, price, value)
 		table.insert(tattoosList,value)
 		MySQL.Async.execute("UPDATE playersTattoos SET tattoos = @tattoos WHERE identifier = @identifier", {['@tattoos'] = json.encode(tattoosList), ['@identifier'] = playerId})
 		TriggerClientEvent("tattoo:buySuccess", _source, value)
-		TriggerClientEvent("esx:showNotification", _source, "~g~You just bought this tattoo.")
+		TriggerClientEvent("esx:showNotification", _source, "~g~Vous avez choisi ce tatoo.")
 	else
-		TriggerClientEvent("esx:showNotification", _source, "~r~You don't have enought money.")
+		TriggerClientEvent("esx:showNotification", _source, "~r~Vous n'avez pas assez d'argent.")
 	end
 end)
 

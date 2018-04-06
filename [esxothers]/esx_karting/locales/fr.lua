@@ -1,6 +1,6 @@
 Locales['fr'] = {
 
-  ['Menu'] = 'Karting Virtuality',
+  ['Menu'] = 'Last Heaven Karting',
   ['press_red'] = 'Appuyez sur ~INPUT_CONTEXT~ pour faire partie de l\'équipe rouge',
   ['press_blue'] = 'Appuyez sur ~INPUT_CONTEXT~ pour faire partie de l\'équipe bleue',
   ['press_cloakroom'] = 'Appuyez sur ~INPUT_CONTEXT~ pour ouvrir le vestiaire',

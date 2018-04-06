@@ -46,15 +46,6 @@ Config.Zones = {
     }
   },
 
-  Bar = {
-    Items = {beer, vodka, tequila, whisky},
-    Pos = {
-      {x = -1393.409, y = -606.624, z = 29.329}, --Bahamamas
-      {x = -559.906, y = 287.093, z = 81.186}, --Tequila la
-      {x = 1986.18, y = 3054.31, z = 46.33}
-    }
-  },
-
   Flics = {
     Items = {donuts, coffee},
     Pos = {

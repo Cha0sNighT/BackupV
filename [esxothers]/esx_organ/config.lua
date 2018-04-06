@@ -17,5 +17,5 @@ Config.Zones = {
     IntestinFarm =      {x=1262.47,  y=-150.74, z=78.22},
     OsFarm =          {x=1273.31,  y=-129.6, z=76.36},
     OrganTreatment =  {x=985.58, y=-2117.89, z=29.77},
-    BodyResell =      {x=-1664.92, y=-281.36,  z=50.86}
+    BodyResell =      {x=-1664.97, y=-281.48,  z=51.35}
 }

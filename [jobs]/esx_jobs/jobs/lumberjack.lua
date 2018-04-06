@@ -6,8 +6,8 @@ Config.Jobs.lumberjack = {
   Vehicles = {
     Truck = {
       Spawner = 1,
-      Hash = "pounder",
-      Trailer = "none",
+      Hash = "phantom3",
+      Trailer = "trailerlogs",
       HasCaution = true
     }
   },
@@ -149,7 +149,7 @@ Config.Jobs.lumberjack = {
           time = 500,
           remove = 1,
           max = 100, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
-          price = 13,
+          price = 3,
           requires = "packaged_plank",
           requires_name = _U('lj_planks'),
           drop = 100

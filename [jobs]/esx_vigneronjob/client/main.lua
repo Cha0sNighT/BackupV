@@ -184,7 +184,7 @@ function OpenVehicleSpawnerMenu()
 						ESX.Game.SetVehicleProperties(vehicle, vehicleProps)
 						local playerPed = GetPlayerPed(-1)
 						TaskWarpPedIntoVehicle(playerPed,  vehicle,  -1)
-						SetVehicleNumberPlateText(vehicle, 'DION' .. platenum)
+						SetVehicleNumberPlateText(vehicle, 'VIGN' .. platenum)
 					end)
 
 					TriggerServerEvent('esx_society:removeVehicleFromGarage', 'vigne', vehicleProps)

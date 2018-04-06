@@ -183,7 +183,7 @@ local function Sell(source, zone)
 			else
 				if (jus == 1) then
 					SetTimeout(1100, function()
-						local money = math.random(18,25)
+						local money = math.random(5,10)
 						xPlayer.removeInventoryItem('jus_raisin', 1)
 						local societyAccount = nil
 
@@ -198,7 +198,7 @@ local function Sell(source, zone)
 					end)
 				elseif (wine == 1) then
 					SetTimeout(1100, function()
-						local money = math.random(30,35)
+						local money = math.random(10,15)
 						xPlayer.removeInventoryItem('wine', 1)
 						local societyAccount = nil
 
@@ -213,7 +213,7 @@ local function Sell(source, zone)
 					end)
 				elseif (grand_cru == 1) then
 					SetTimeout(1100, function()
-						local money = math.random(250,300)
+						local money = math.random(100,150)
 						xPlayer.removeInventoryItem('grand_cru', 1)
 						local societyAccount = nil
 

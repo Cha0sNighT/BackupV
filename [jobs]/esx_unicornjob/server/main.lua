@@ -2,6 +2,27 @@ ESX                = nil
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
+RegisterServerEvent('unicorn:LockDoor')
+AddEventHandler('unicorn:LockDoor', function(door, bool)
+	doorList[door]["locked"] = bool
+	TriggerClientEvent('unicorn:LockDoor', -1, door, bool)
+end)
+
+
+
+ESX.RegisterServerCallback('unicorn:checkDoor', function(source, cb)
+
+	cb(doorList)
+
+end)
+
+doorList = {
+    -- Front Door
+    [1] = { ["objName"] = "prop_strip_door_01", ["x"]= 127.9552, ["y"]= -1298.503,["z"]= 29.41962,["locked"]= true,["txtX"]=128.4552,["txtY"]=-1298.803,["txtZ"]=29.61962},
+    -- Back Door
+    [2] = { ["objName"] = "prop_magenta_door", ["x"]= 96.09197, ["y"]= -1284.854,["z"]= 29.43878,["locked"]= true,["txtX"]=95.59197,["txtY"]=-1285.154,["txtZ"]=29.63878},
+}
+
 if Config.MaxInService ~= -1 then
   TriggerEvent('esx_service:activateService', 'unicorn', Config.MaxInService)
 end
@@ -131,7 +152,7 @@ AddEventHandler('esx_unicornjob:buyItem', function(itemName, price, itemLabel)
     TriggerEvent('esx_addonaccount:getSharedAccount', 'society_unicorn', function(account)
         societyAccount = account
       end)
-    
+
     if societyAccount ~= nil and societyAccount.money >= price then
         if qtty < limit then
             societyAccount.removeMoney(price)
@@ -155,7 +176,7 @@ AddEventHandler('esx_unicornjob:craftingCoktails', function(itemValue)
     TriggerClientEvent('esx:showNotification', _source, _U('assembling_cocktail'))
 
     if _itemValue == 'jagerbomb' then
-        SetTimeout(10000, function()        
+        SetTimeout(10000, function()
 
             local xPlayer           = ESX.GetPlayerFromId(_source)
 
@@ -184,7 +205,7 @@ AddEventHandler('esx_unicornjob:craftingCoktails', function(itemValue)
     end
 
     if _itemValue == 'golem' then
-        SetTimeout(10000, function()        
+        SetTimeout(10000, function()
 
             local xPlayer           = ESX.GetPlayerFromId(_source)
 
@@ -216,9 +237,9 @@ AddEventHandler('esx_unicornjob:craftingCoktails', function(itemValue)
 
         end)
     end
-    
+
     if _itemValue == 'whiskycoca' then
-        SetTimeout(10000, function()        
+        SetTimeout(10000, function()
 
             local xPlayer           = ESX.GetPlayerFromId(_source)
 
@@ -247,7 +268,7 @@ AddEventHandler('esx_unicornjob:craftingCoktails', function(itemValue)
     end
 
     if _itemValue == 'rhumcoca' then
-        SetTimeout(10000, function()        
+        SetTimeout(10000, function()
 
             local xPlayer           = ESX.GetPlayerFromId(_source)
 
@@ -276,7 +297,7 @@ AddEventHandler('esx_unicornjob:craftingCoktails', function(itemValue)
     end
 
     if _itemValue == 'vodkaenergy' then
-        SetTimeout(10000, function()        
+        SetTimeout(10000, function()
 
             local xPlayer           = ESX.GetPlayerFromId(_source)
 
@@ -310,7 +331,7 @@ AddEventHandler('esx_unicornjob:craftingCoktails', function(itemValue)
     end
 
     if _itemValue == 'vodkafruit' then
-        SetTimeout(10000, function()        
+        SetTimeout(10000, function()
 
             local xPlayer           = ESX.GetPlayerFromId(_source)
 
@@ -336,7 +357,7 @@ AddEventHandler('esx_unicornjob:craftingCoktails', function(itemValue)
                     xPlayer.removeInventoryItem('jusfruit', 2)
                     xPlayer.removeInventoryItem('vodka', 2)
                     xPlayer.removeInventoryItem('ice', 1)
-                    xPlayer.addInventoryItem('vodkafruit', 1) 
+                    xPlayer.addInventoryItem('vodkafruit', 1)
                 end
             end
 
@@ -344,7 +365,7 @@ AddEventHandler('esx_unicornjob:craftingCoktails', function(itemValue)
     end
 
     if _itemValue == 'rhumfruit' then
-        SetTimeout(10000, function()        
+        SetTimeout(10000, function()
 
             local xPlayer           = ESX.GetPlayerFromId(_source)
 
@@ -378,7 +399,7 @@ AddEventHandler('esx_unicornjob:craftingCoktails', function(itemValue)
     end
 
     if _itemValue == 'teqpaf' then
-        SetTimeout(10000, function()        
+        SetTimeout(10000, function()
 
             local xPlayer           = ESX.GetPlayerFromId(_source)
 
@@ -407,7 +428,7 @@ AddEventHandler('esx_unicornjob:craftingCoktails', function(itemValue)
     end
 
     if _itemValue == 'mojito' then
-        SetTimeout(10000, function()        
+        SetTimeout(10000, function()
 
             local xPlayer           = ESX.GetPlayerFromId(_source)
 
@@ -446,7 +467,7 @@ AddEventHandler('esx_unicornjob:craftingCoktails', function(itemValue)
     end
 
     if _itemValue == 'mixapero' then
-        SetTimeout(10000, function()        
+        SetTimeout(10000, function()
 
             local xPlayer           = ESX.GetPlayerFromId(_source)
 
@@ -485,7 +506,7 @@ AddEventHandler('esx_unicornjob:craftingCoktails', function(itemValue)
     end
 
     if _itemValue == 'metreshooter' then
-        SetTimeout(10000, function()        
+        SetTimeout(10000, function()
 
             local xPlayer           = ESX.GetPlayerFromId(_source)
 
@@ -524,7 +545,7 @@ AddEventHandler('esx_unicornjob:craftingCoktails', function(itemValue)
     end
 
     if _itemValue == 'jagercerbere' then
-        SetTimeout(10000, function()        
+        SetTimeout(10000, function()
 
             local xPlayer           = ESX.GetPlayerFromId(_source)
 

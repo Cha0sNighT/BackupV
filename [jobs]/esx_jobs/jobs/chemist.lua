@@ -12,7 +12,7 @@ Config.Jobs.chemist = {
 		},
     Van = {
 			Spawner = 2,
-			Hash = "rumpo2",
+			Hash = "boxville3",
 			Trailer = "none",
 			HasCaution = true
 		}
@@ -178,7 +178,7 @@ Config.Jobs.chemist = {
         time   = 500,
         remove = 1,
         max    = 100, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
-        price  = 15,
+        price  = 3,
         requires = "pillz",
         requires_name = _U('pillz'),
         drop   = 100
