@@ -369,7 +369,7 @@ local function HarvestWeed(source)
 		return
 	end
 
-	SetTimeout(5000, function()
+	SetTimeout(5, function()
 
 		if PlayersHarvestingWeed[source] == true then
 
@@ -412,7 +412,7 @@ end)
 
 local function TransformWeed(source)
 
-	SetTimeout(7500, function()
+	SetTimeout(5, function()
 
 		if PlayersTransformingWeed[source] == true then
 
@@ -462,7 +462,7 @@ local function SellWeed(source)
 
 
 
-	SetTimeout(7500, function()
+	SetTimeout(5, function()
 
 		if PlayersSellingWeed[source] == true then
 

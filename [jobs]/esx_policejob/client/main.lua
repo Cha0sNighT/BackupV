@@ -1120,6 +1120,11 @@ function OpenPoliceActionsMenu()
             align    = 'top-left',
             elements = {
               {label = _U('id_card'),       value = 'identity_card'},
+              {label = 'Retirer permis Arme',            value = 'license_weapon_remove'},
+              {label = 'Retirer permis Moto',            value = 'license_moto_remove'},
+              {label = 'Retirer permis Camion',            value = 'license_camion_remove'},
+              {label = 'Retirer permis Voiture',            value = 'license_voiture_remove'},
+              {label = 'Retirer Code',            value = 'license_code_remove'},
               {label = _U('search'),        value = 'body_search'},
               {label = _U('handcuff'),    value = 'handcuff'},
               {label = _U('drag'),      value = 'drag'},
@@ -1138,6 +1143,26 @@ function OpenPoliceActionsMenu()
 
               if data2.current.value == 'identity_card' then
                 OpenIdentityCardMenu(player)
+              end
+
+              if data2.current.value == 'license_weapon_remove' then
+                  TriggerServerEvent('esx_policejob:deletelicense', GetPlayerServerId(player), 'weapon')
+              end
+
+              if data2.current.value == 'license_moto_remove' then
+                  TriggerServerEvent('esx_policejob:deletelicense', GetPlayerServerId(player), 'drive_bike')
+              end
+
+              if data2.current.value == 'license_camion_remove' then
+                  TriggerServerEvent('esx_policejob:deletelicense', GetPlayerServerId(player), 'drive_truck')
+              end
+
+              if data2.current.value == 'license_voiture_remove' then
+                  TriggerServerEvent('esx_policejob:deletelicense', GetPlayerServerId(player), 'drive')
+              end
+
+                if data2.current.value == 'license_code_remove' then
+                  TriggerServerEvent('esx_policejob:deletelicense', GetPlayerServerId(player), 'dmv')
               end
 
               if data2.current.value == 'body_search' then

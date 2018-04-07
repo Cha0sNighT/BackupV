@@ -545,7 +545,7 @@ function OpenVehicleSpawnerMenu()
 
           local vehicleProps = data.current.value
 
-          ESX.Game.SpawnVehicle(vehicleProps.model, Config.Zones.VehicleSpawnPoint.Pos, 264.35, function(vehicle)
+          ESX.Game.SpawnVehicle(vehicleProps.model, Config.Zones.VehicleSpawnPoint.Pos, Config.Zones.VehicleSpawnPoint.Heading, function(vehicle)
             ESX.Game.SetVehicleProperties(vehicle, vehicleProps)
             local playerPed = GetPlayerPed(-1)
             TaskWarpPedIntoVehicle(playerPed,  vehicle,  -1)
@@ -581,7 +581,7 @@ function OpenVehicleSpawnerMenu()
       function(data, menu)
         menu.close()
         local model = data.current.value
-        ESX.Game.SpawnVehicle(model, Config.Zones.VehicleSpawnPoint.Pos, 230.0, function(vehicle)
+        ESX.Game.SpawnVehicle(model, Config.Zones.VehicleSpawnPoint.Pos, Config.Zones.VehicleSpawnPoint.Heading, function(vehicle)
           local playerPed = GetPlayerPed(-1)
           TaskWarpPedIntoVehicle(playerPed, vehicle, -1)
         end)

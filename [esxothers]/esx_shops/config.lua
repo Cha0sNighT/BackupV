@@ -1,7 +1,7 @@
 Config = {}
 
 Config.DrawDistance = 100
-Config.Size = {x = 1.0, y = 1.0, z = 1.0}
+Config.Size = {x = 2.0, y = 2.0, z = 1.0}
 Config.Color = {r = 0, g = 128, b = 255}
 Config.Type = 27
 Config.Locale = 'fr'
@@ -9,7 +9,7 @@ Config.Locale = 'fr'
 Config.Zones = {
 
   TwentyFourSeven = {
-    Items = {bread, water, chocolate, sandwich, hamburger, cupcake, cocacola, icetea, redbull, tobbaco, lighter},
+    Items = {bread, water, chocolate, sandwich, hamburger, cupcake, cocacola, icetea, redbull, lighter},
     Pos = {
       {x = 373.875, y = 325.896, z = 102.576},
       {x = 2557.458, y = 382.282, z = 107.632},
@@ -24,7 +24,7 @@ Config.Zones = {
   },
 
   RobsLiquor = {
-    Items = {bread, water, chocolate, sandwich, hamburger, cupcake, cocacola, icetea, redbull, tobbaco, lighter},
+    Items = {bread, water, chocolate, sandwich, hamburger, cupcake, cocacola, icetea, redbull, lighter},
     Pos = {
       {x = 1135.808, y = -982.281, z = 45.425},
       {x = -1222.915, y = -906.983, z = 11.336},
@@ -36,13 +36,21 @@ Config.Zones = {
   },
 
   LTDgasoline = {
-    Items = {bread, water, chocolate, sandwich, hamburger, cupcake, cocacola, icetea, redbull, tobbaco, lighter, cigarett},
+    Items = {bread, water, chocolate, sandwich, hamburger, cupcake, cocacola, icetea, redbull, lighter, cigarett},
     Pos = {
       {x = -48.519, y = -1757.514, z = 28.431},
       {x = 1163.373, y = -323.801, z = 68.245},
       {x = -707.501, y = -914.260, z = 18.225},
       {x = -1820.523, y = 792.518, z = 137.128},
       {x = 1698.388, y = 4924.404, z = 41.073}
+    }
+  },
+
+  Bar = {
+    Items = {beer, vodka, tequila, whisky},
+    Pos = {
+      {x = -1393.409, y = -606.624, z = 29.329}, --Bahamamas
+      {x = 1986.18, y = 3054.31, z = 46.33}
     }
   },
 

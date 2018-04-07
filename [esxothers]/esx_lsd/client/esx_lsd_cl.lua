@@ -46,23 +46,23 @@ AddEventHandler('esx_lsd:hasEnteredMarker', function(zone)
         end
 
         if zone == 'LsdTreatment' then
-
+              if myJob ~= "police" then
                 if lsdQTE >= 10 then
                     CurrentAction     = 'lsd_treatment'
                     CurrentActionMsg  = _U('press_process_lsd')
                     CurrentActionData = {}
                 end
-
+              end
         end
 
         if zone == 'LsdResell' then
-
+              if myJob ~= "police" then
                 if lsd_poochQTE >= 1 then
                     CurrentAction     = 'lsd_resell'
                     CurrentActionMsg  = _U('press_sell_lsd')
                     CurrentActionData = {}
                 end
-
+              end
         end
     end)
 

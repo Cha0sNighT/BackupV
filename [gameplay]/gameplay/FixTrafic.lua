@@ -17,11 +17,11 @@ Citizen.CreateThread(function()
     while true
         do
             -- 1.
-        SetVehicleDensityMultiplierThisFrame(0.0)
-        SetPedDensityMultiplierThisFrame(0.0)
-        SetRandomVehicleDensityMultiplierThisFrame(0.0)
-        SetParkedVehicleDensityMultiplierThisFrame(0.0)
-        SetScenarioPedDensityMultiplierThisFrame(0.0, 0.0)
+        SetVehicleDensityMultiplierThisFrame(0.5)
+        --SetPedDensityMultiplierThisFrame(0.0)
+        --SetRandomVehicleDensityMultiplierThisFrame(0.0)
+        --SetParkedVehicleDensityMultiplierThisFrame(0.0)
+        --SetScenarioPedDensityMultiplierThisFrame(0.0, 0.0)
 
         --local playerPed = GetPlayerPed(-1)
         --local pos = GetEntityCoords(playerPed)

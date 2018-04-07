@@ -52,23 +52,23 @@ AddEventHandler('esx_drugs:hasEnteredMarker', function(zone)
         end
 
         if zone == 'CokeTreatment' then
-            
+            if myJob ~= "police" then
                 if cokeQTE >= 5 then
                     CurrentAction     = 'coke_treatment'
                     CurrentActionMsg  = _U('press_process_coke')
                     CurrentActionData = {}
                 end
-            
+            end
         end
 
         if zone == 'CokeResell' then
-            
+            if myJob ~= "police" then
                 if coke_poochQTE >= 1 then
                     CurrentAction     = 'coke_resell'
                     CurrentActionMsg  = _U('press_sell_coke')
                     CurrentActionData = {}
                 end
-            
+            end
         end
 
         --meth
@@ -81,23 +81,23 @@ AddEventHandler('esx_drugs:hasEnteredMarker', function(zone)
         end
 
         if zone == 'MethTreatment' then
-            
+            if myJob ~= "police" then
                 if methQTE >= 5 then
                     CurrentAction     = 'meth_treatment'
                     CurrentActionMsg  = _U('press_process_meth')
                     CurrentActionData = {}
                 end
-            
+            end
         end
 
         if zone == 'MethResell' then
-            
+            if myJob ~= "police" then
                 if meth_poochQTE >= 1 then
                     CurrentAction     = 'meth_resell'
                     CurrentActionMsg  = _U('press_sell_meth')
                     CurrentActionData = {}
                 end
-            
+            end
         end
 
         --weed
@@ -110,23 +110,23 @@ AddEventHandler('esx_drugs:hasEnteredMarker', function(zone)
         end
 
         if zone == 'WeedTreatment' then
-            
+            if myJob ~= "police" then
                 if weedQTE >= 5 then
                     CurrentAction     = 'weed_treatment'
                     CurrentActionMsg  = _U('press_process_weed')
                     CurrentActionData = {}
                 end
-            
+            end
         end
 
         if zone == 'WeedResell' then
-            
+            if myJob ~= "police" then
                 if weed_poochQTE >= 1 then
                     CurrentAction     = 'weed_resell'
                     CurrentActionMsg  = _U('press_sell_weed')
                     CurrentActionData = {}
                 end
-            
+            end
         end
 
         --opium
@@ -139,23 +139,23 @@ AddEventHandler('esx_drugs:hasEnteredMarker', function(zone)
         end
 
         if zone == 'OpiumTreatment' then
-            
+            if myJob ~= "police" then
                 if opiumQTE >= 5 then
                     CurrentAction     = 'opium_treatment'
                     CurrentActionMsg  = _U('press_process_opium')
                     CurrentActionData = {}
                 end
-            
+            end
         end
 
         if zone == 'OpiumResell' then
-            
+            if myJob ~= "police" then
                 if opium_poochQTE >= 1 then
                     CurrentAction     = 'opium_resell'
                     CurrentActionMsg  = _U('press_sell_opium')
                     CurrentActionData = {}
                 end
-            
+            end
         end
 end)
 

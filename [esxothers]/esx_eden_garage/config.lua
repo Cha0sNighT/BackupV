@@ -69,20 +69,20 @@ Config.Garages = {
 		},
 	},
 	Ambulance = {
-		Pos = {x= -460.63, y= -272.41, z= 34.79},
+		Pos = {x= 1141.36, y= -1601.27, z= 33.7},
 		Size  = {x = 3.0, y = 3.0, z = 1.0},
 		Color = {r=255,g=255,b=255},
 		Marker = 1,
 		SpawnPoint = {
-			Pos = {x= -460.63, y= -272.41, z= 34.79},
+			Pos = {x= 1141.36, y= -1601.27, z= 33.7},
 			Color = {r=255,g=255,b=255},
 			Size  = {x = 3.0, y = 3.0, z = 1.0},
-			Marker = 1,
-			Heading = 22.3,
+			Marker = -1,
+			Heading = 178.2,
 			TP = true
 		},
 		DeletePoint = {
-			Pos = {x= -460.63, y= -272.41, z= 34.79},
+			Pos = {x= 1141.36, y= -1601.27, z= 33.7},
 			Color = {r=255,g=255,b=255},
 			Size  = {x = 3.0, y = 3.0, z = 1.0},
 			Marker = 1
