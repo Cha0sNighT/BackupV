@@ -32,7 +32,7 @@ ui_page 'html/ui.html'
 files {
   'html/ui.html',
   'html/bankgothic.ttf',
-  'html/pdown.ttf',
+  'html/BebasNeue.ttf',
   'html/css/app.css',
   'html/scripts/mustache.min.js',
   'html/scripts/app.js',

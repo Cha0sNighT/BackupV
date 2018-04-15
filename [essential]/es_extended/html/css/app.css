@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Pricedown';
-  src: url('../fonts/pdown.ttf') /* TTF file for CSS3 browsers */
+  font-family: 'BebasNeue';
+  src: url('../fonts/BebasNeue.ttf') /* TTF file for CSS3 browsers */
 }
 
 @font-face {
@@ -20,7 +20,7 @@ html {
 
 #hud {
   position   : absolute;
-  font-family: 'Pricedown';
+  font-family: 'BebasNeue';
   font-size  : 25px;
   color      : white;
   padding    : 4px;
@@ -36,8 +36,8 @@ html {
 }
 
 #inventory_notifications {
-  font-family: bankgothic; 
-  position   : absolute; 
+  font-family: bankgothic;
+  position   : absolute;
   right      : 40;
   bottom     : 40;
   font-size  : 2em;
@@ -57,7 +57,7 @@ html {
     color           : #fff;
     position        : absolute;
     left            : 40;
-    top             : 0; 
+    top             : 0;
 }
 
 .menu .head {
@@ -79,8 +79,8 @@ html {
 .menu .head span {
   font-family: 'Pricedown';
   font-size: 18px;
-  padding-left: 15px; 
-  padding-top: 6px; 
+  padding-left: 15px;
+  padding-top: 6px;
 }
 
 .menu .menu-items .menu-item {

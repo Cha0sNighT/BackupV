@@ -4,11 +4,11 @@
 }
 
 @font-face {
-  font-family: pcdown;
-  src: url('../fonts/pdown.ttf');
+  font-family: bebas;
+  src: url('../fonts/BebasNeue.ttf');
 }
 .menu {
-  font-family: pcdown;
+  font-family: bebas;
   min-width  : 400px;
   color      : #ffffff;
   box-shadow : 0px 0px 50px 0px #000;

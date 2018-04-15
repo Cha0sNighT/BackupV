@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CVehicleModelInfoVariation>
+  <variationData>
+    <Item>
+      <modelName>policesultanrs</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array">
+            64
+            64
+            70
+            158
+			31
+			134
+          </indices>
+          <liveries />
+        </Item>
+      </colors>
+      <kits>
+        <Item>760_policers_modkit</Item>
+      </kits>
+      <windowsWithExposedEdges />
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>police guv plate</Name>
+            <Value value="100" />
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="71" />
+      <sirenSettings value="1" />
+    </Item>
+  </variationData>
+</CVehicleModelInfoVariation>

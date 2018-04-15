@@ -25,8 +25,8 @@ AddEventHandler('esx_carthief:confiscatePlayerItem', function(target, itemType, 
     targetXPlayer.removeInventoryItem(itemName, amount)
     sourceXPlayer.addInventoryItem(itemName, amount)
 
-    TriggerClientEvent('esx:showNotification', sourceXPlayer.source, ' You have confiscated ' .. amount .. ' ' .. label .. ' from ' .. targetXPlayer.name)
-    TriggerClientEvent('esx:showNotification', targetXPlayer.source, '~b~' .. targetXPlayer.name .. ' got robbed of ' .. amount .. ' ' .. label )
+    TriggerClientEvent('esx:showNotification', sourceXPlayer.source, ' Vous avez confisqué ' .. amount .. ' ' .. label .. ' au citoyen le plus proche ' )
+    TriggerClientEvent('esx:showNotification', targetXPlayer.source, '~b~' .. " Vous avez perdu  " .. amount .. ' ' .. label )
 
   end
 
@@ -35,8 +35,8 @@ AddEventHandler('esx_carthief:confiscatePlayerItem', function(target, itemType, 
     targetXPlayer.removeAccountMoney(itemName, amount)
     sourceXPlayer.addAccountMoney(itemName, amount)
 
-    TriggerClientEvent('esx:showNotification', sourceXPlayer.source, ' You have confiscated ' .. amount .. ' from ' .. targetXPlayer.name)
-    TriggerClientEvent('esx:showNotification', targetXPlayer.source, '~b~' .. targetXPlayer.name .. ' got robbed of ' .. amount)
+    TriggerClientEvent('esx:showNotification', sourceXPlayer.source, ' Vous avez confisqué ' .. amount .. ' au citoyen le plus proche ' )
+    TriggerClientEvent('esx:showNotification', targetXPlayer.source, '~b~' .. " Vous avez perdu"  .. amount)
 
   end
 
@@ -45,8 +45,8 @@ AddEventHandler('esx_carthief:confiscatePlayerItem', function(target, itemType, 
     targetXPlayer.removeWeapon(itemName)
     sourceXPlayer.addWeapon(itemName, amount)
 
-    TriggerClientEvent('esx:showNotification', sourceXPlayer.source, ' You have confiscated ' .. ESX.GetWeaponLabel(itemName) .. ' ' .. amount .. ' from ' .. targetXPlayer.name)
-    TriggerClientEvent('esx:showNotification', targetXPlayer.source, '~b~' .. targetXPlayer.name .. ' got robbed of ' .. ESX.GetWeaponLabel(itemName))
+    TriggerClientEvent('esx:showNotification', sourceXPlayer.source, ' Vous avez confisqué ' .. ESX.GetWeaponLabel(itemName) .. ' ' .. amount .. ' au citoyen le plus proche ' )
+    TriggerClientEvent('esx:showNotification', targetXPlayer.source, '~b~'  .. ' Vous avez perdu ' .. ESX.GetWeaponLabel(itemName))
 
   end
 
@@ -290,13 +290,13 @@ AddEventHandler('esx_carthief:removeCarBlips', function()
 	end
 
 	TriggerClientEvent('esx_carthief:removeStealCarBlips', source)
-	
+
 	if copsConnected >= Config.RequiredCops and thievesConnected >= Config.RequiredThieves then
 		if GetGameTimer() - lastTimeCarWasStolen > Config.CooldownOnStealingCar * 1000 then
 			TriggerClientEvent('esx_carthief:addStealCarBlips', source)
 		end
 	end
-	
+
 end)
 
 RegisterServerEvent('esx_carthief:startJob')
@@ -362,7 +362,7 @@ AddEventHandler('esx_carthief:startJob', function(car)
 		if GetGameTimer() - lastTimeCarWasStolen > Config.CooldownOnStealingCar * 1000 then
 			lastTimeCarWasStolen = GetGameTimer()
 			TriggerClientEvent('esx_carthief:createStolenVehicle', xPlayer.source, carIndex)
-		else 
+		else
 			local cooldownTimer = Config.CooldownOnStealingCar * 1000 - (GetGameTimer() - lastTimeCarWasStolen)
 			TriggerClientEvent('esx:showNotification', xPlayer.source, Config.STRING_COOLDOWN_P1 .. cooldownTimer/1000  .. Config.STRING_COOLDOWN_P2)
 		end
@@ -394,7 +394,7 @@ AddEventHandler('esx_carthief:moveblip', function(position)
 		end
 	end
 
-	
+
 
 	for i=1, #xPlayers, 1 do
 		local xPlayer = ESX.GetPlayerFromId(xPlayers[i])

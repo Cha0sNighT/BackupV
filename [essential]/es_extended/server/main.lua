@@ -345,8 +345,8 @@ AddEventHandler('esx:giveInventoryItem', function(target, type, itemName, itemCo
       sourceXPlayer.removeMoney(itemCount)
       targetXPlayer.addMoney(itemCount)
 
-      TriggerClientEvent('esx:showNotification', _source, _U('yougave') .. ' ~g~$' .. itemCount .. _U('to')   .. targetXPlayer.name)
-      TriggerClientEvent('esx:showNotification', target,  _U('youreceived') .. ' ~g~$'  .. itemCount .. _U('by') .. sourceXPlayer.name)
+      TriggerClientEvent('esx:showNotification', _source, _U('yougave') .. ' ~g~$' .. itemCount .. _U('to')   .. _U('front_of'))
+      TriggerClientEvent('esx:showNotification', target,  _U('youreceived') .. ' ~g~$'  .. itemCount .. _U('by') .._U('front_of'))
       TriggerEvent("esx:givemoneyalert",sourceXPlayer.name,targetXPlayer.name,itemCount)
 
     else
@@ -360,8 +360,8 @@ AddEventHandler('esx:giveInventoryItem', function(target, type, itemName, itemCo
       sourceXPlayer.removeAccountMoney(itemName, itemCount)
       targetXPlayer.addAccountMoney(itemName, itemCount)
 
-      TriggerClientEvent('esx:showNotification', _source, _U('yougave') .. ' [' .. Config.AccountLabels[itemName] .. '] ~g~$' .. itemCount .. _U('to')   .. targetXPlayer.name)
-      TriggerClientEvent('esx:showNotification', target,  _U('youreceived') .. ' ['  .. Config.AccountLabels[itemName] .. '] ~g~$' .. itemCount .. _U('by') .. sourceXPlayer.name)
+      TriggerClientEvent('esx:showNotification', _source, _U('yougave') .. ' [' .. Config.AccountLabels[itemName] .. '] ~g~$' .. itemCount .. _U('to')   .. _U('front_of'))
+      TriggerClientEvent('esx:showNotification', target,  _U('youreceived') .. ' ['  .. Config.AccountLabels[itemName] .. '] ~g~$' .. itemCount .. _U('by') .. _U('front_of'))
       TriggerEvent("esx:givemoneybankalert",sourceXPlayer.name,targetXPlayer.name,itemCount)
 
     else
@@ -382,8 +382,8 @@ AddEventHandler('esx:giveInventoryItem', function(target, type, itemName, itemCo
       end
     end
 
-    TriggerClientEvent('esx:showNotification', _source, _U('yougave') .. ' x1 ~g~' .. weaponLabel .. _U('to')   .. targetXPlayer.name)
-    TriggerClientEvent('esx:showNotification', target,  _U('youreceived')  .. ' x1 ~g~' .. weaponLabel .. _U('by') .. sourceXPlayer.name)
+    TriggerClientEvent('esx:showNotification', _source, _U('yougave') .. ' x1 ~g~' .. weaponLabel .. _U('to')   .. _U('front_of'))
+    TriggerClientEvent('esx:showNotification', target,  _U('youreceived')  .. ' x1 ~g~' .. weaponLabel .. _U('by') .. _U('front_of'))
     TriggerEvent("esx:giveweaponalert",sourceXPlayer.name,targetXPlayer.name,weaponLabel)
   end
 

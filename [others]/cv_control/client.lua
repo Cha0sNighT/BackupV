@@ -30,7 +30,7 @@ local options = {
 function PersonnalMenu()
     options.menu_subtitle = "CATEGORIES"  
     ClearMenu()
-    Menu.addButton("Moteur", "moteur", nil)
+    Menu.addButton("Moteur(broken)", "moteur", nil)
     Menu.addButton("Limiteur de vitesse", "speedo", nil)  
     Menu.addButton("Portieres", "portieres", nil)
 	  Menu.addButton("Fermer le menu", "CloseMenu", nil)
@@ -49,11 +49,10 @@ function speedo()
     ClearMenu()
     Menu.addButton("Desactiver", "vitesse", 0)
     Menu.addButton("30 ~g~Km/h", "vitesse", "30.0")
-    Menu.addButton("50 ~g~Km/h", "vitesse", "50.0")
-    Menu.addButton("70 ~g~Km/h", "vitesse", "70.0")
-    Menu.addButton("90 ~g~Km/h", "vitesse", "90.0")
-    Menu.addButton("110 ~g~Km/h", "vitesse", "110.0")
-    Menu.addButton("130 ~g~Km/h", "vitesse", "130.0")
+    Menu.addButton("60 ~g~Km/h", "vitesse", "60.0")
+    Menu.addButton("80 ~g~Km/h", "vitesse", "80.0")
+    Menu.addButton("100 ~g~Km/h", "vitesse", "100.0")
+    Menu.addButton("120 ~g~Km/h", "vitesse", "120.0")
     Menu.addButton("Retour", "PersonnalMenu", nil)
 end
 
@@ -126,10 +125,10 @@ function vitesse(vit)
    
     if (vit == 0) then
     SetEntityMaxSpeed(vehicle, Max)
-    exports.pNotify:SendNotification({text = "Limiteur désactivé", type = "error", layout = "bottomRight", timeout = math.random(4000, 8000)})
+    TriggerEvent('esx:showNotification', 'Limiteur désactivé !')
     else
     SetEntityMaxSpeed(vehicle, speed)
-    exports.pNotify:SendNotification({text = "Limiteur activé", type = "success", layout = "bottomRight", timeout = math.random(4000, 8000)})
+    TriggerEvent('esx:showNotification', 'Activé !')
     PersonnalMenu()
     end
 end
@@ -253,14 +252,14 @@ function moteurOn()
    local playerPed = GetPlayerPed(-1)
    local playerVeh = GetVehiclePedIsIn(playerPed, false)
    SetVehicleEngineOn(GetVehiclePedIsIn(GetPlayerPed(-1), false), true)
-   exports.pNotify:SendNotification({text = "Moteur allumer", type = "success", layout = "bottomRight", timeout = math.random(4000, 8000)})
+   TriggerEvent('esx:showNotification', 'Moteur allumé !')
 end
 
 function moteurOff()
    local playerPed = GetPlayerPed(-1)
    local playerVeh = GetVehiclePedIsIn(playerPed, false)
    SetVehicleEngineOn(GetVehiclePedIsIn(GetPlayerPed(-1), false), false)
-   exports.pNotify:SendNotification({text = "Moteur éteint", type = "error", layout = "bottomRight", timeout = math.random(4000, 8000)})
+   TriggerEvent('esx:showNotification', 'Moteur éteint !')
 end
 
 function SendNotification(message)

@@ -11,7 +11,7 @@ description 'EssentialMode by Kanersps.'
 ui_page 'ui.html'
 
 -- Server
-server_scripts { 
+server_scripts {
 	'config.lua',
 	'server/util.lua',
 	'server/main.lua',
@@ -29,7 +29,7 @@ client_scripts {
 -- NUI Files
 files {
 	'ui.html',
-	'pdown.ttf'
+	'BebasNeue.ttf'
 }
 
 exports {

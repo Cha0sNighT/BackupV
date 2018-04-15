@@ -225,7 +225,7 @@ AddEventHandler('esx_phone:loaded', function (phoneNumber, contacts)
   TriggerEvent('esx_phone:addSpecialContact', specialContact.name, specialContact.number, specialContact.base64Icon)
 end)
 
--- Create Blips
+--[[ Create Blips
 Citizen.CreateThread(function ()
   local blip = AddBlipForCoord(Config.Zones.BankActions.Pos.x, Config.Zones.BankActions.Pos.y, Config.Zones.BankActions.Pos.z)
 
@@ -239,7 +239,7 @@ Citizen.CreateThread(function ()
   AddTextComponentString(_U('bank'))
   EndTextCommandSetBlipName(blip)
 end)
-
+--]]
 -- Display markers
 Citizen.CreateThread(function ()
   while true do

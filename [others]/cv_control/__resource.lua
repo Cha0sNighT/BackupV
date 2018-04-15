@@ -10,7 +10,7 @@ ui_page 'ui/ui.html'
 files {
     'ui/ui.html',
     'ui/animate.css',
-    'ui/pdown.ttf',
+    'ui/BebasNeue.ttf',
     'ui/voice_of_the_highlander.ttf'
 }
 

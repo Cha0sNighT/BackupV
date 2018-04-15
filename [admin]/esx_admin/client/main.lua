@@ -248,7 +248,7 @@ function OpenAccountantActionsMenu()
 											if data.current.value == 'start' then
 												TriggerEvent('esx_admin:going')
 												TriggerServerEvent('esx_admin:callbrinks1')
-												ESX.ShowNotification('Spawn Brinks en cour')
+												ESX.ShowNotification('Spawn Brinks en cours')
 
 											end
 

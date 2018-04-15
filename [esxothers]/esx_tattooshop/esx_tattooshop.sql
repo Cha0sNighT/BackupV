@@ -1,0 +1,3 @@
+ALTER TABLE `users`
+	ADD COLUMN `tattoos` VARCHAR(255) DEFAULT '{}'
+;

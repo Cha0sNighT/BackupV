@@ -147,7 +147,7 @@ local function SellLsd(source)
 			else
 				xPlayer.removeInventoryItem('lsd_pooch', 1)
 				if CopsConnected == 0 then
-                    xPlayer.addAccountMoney('black_money', 70)
+                    xPlayer.addAccountMoney('black_money', 60)
                     TriggerClientEvent('esx:showNotification', source, _U('sold_one_lsd'))
                 elseif CopsConnected == 1 then
                     xPlayer.addAccountMoney('black_money', 70)

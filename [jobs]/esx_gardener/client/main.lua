@@ -103,12 +103,22 @@ if NPCTargetGarden ~= nil then
     HelpPromt(_U('pickup'))
 
     if IsControlJustReleased(1, Keys["E"]) and PlayerData.job ~= nil then
-      TaskStartScenarioInPlace(playerPed, "WORLD_HUMAN_GARDENER_LEAF_BLOWER", 0, true)
-      Wait(17000)
-      StopNPCJob()
-      Wait(3000)
-      ClearPedTasksImmediately(playerPed)
-      Done = false
+      local action = math.random(50,100)
+        if action <= 50 then
+          TaskStartScenarioInPlace(playerPed, "WORLD_HUMAN_GARDENER_LEAF_BLOWER", 0, true)
+          Wait(17000)
+          StopNPCJob()
+          Wait(3000)
+          ClearPedTasksImmediately(playerPed)
+          Done = false
+        else
+          TaskStartScenarioInPlace(playerPed, "WORLD_HUMAN_GARDENER_PLANT", 0, true)
+          Wait(17000)
+          StopNPCJob()
+          Wait(3000)
+          ClearPedTasksImmediately(playerPed)
+          Done = false
+        end
     end
   end
 end

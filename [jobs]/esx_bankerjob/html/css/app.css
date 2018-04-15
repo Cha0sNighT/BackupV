@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Pricedown';
-    src: url('../fonts/pdown.ttf') /* TTF file for CSS3 browsers */
+    font-family: 'BebasNeue';
+    src: url('../fonts/BebasNeue.ttf') /* TTF file for CSS3 browsers */
 }
 
 html {
@@ -14,13 +14,13 @@ html {
 }
 
 #controls {
-  font-family: 'Pricedown';
+  font-family: 'BebasNeue';
 	font-size     : 3em;
 	color         : #FFF;
 	position      : absolute;
 	bottom        : 40;
 	right         : 40;
-	
+
 	text-shadow:
    	-1px -1px 0 #000,
 		 1px -1px 0 #000,
@@ -40,7 +40,7 @@ html {
     color           : #fff;
     position        : absolute;
     left            : 40;
-    top             : 0; 
+    top             : 0;
 }
 
 .menu .head {
@@ -60,10 +60,10 @@ html {
   box-shadow: 1px 1px 10px 4px rgba(0, 0, 0, 0.4);
 }
 .menu .head span {
-  font-family: 'Pricedown';
+  font-family: 'BebasNeue';
   font-size: 28px;
-  padding-left: 15px; 
-  padding-top: 6px; 
+  padding-left: 15px;
+  padding-top: 6px;
 }
 
 .menu .menu-items .menu-item {
@@ -85,7 +85,7 @@ html {
 
 #customers {
 
-  font-family: 'Open Sans', sans-serif; 
+  font-family: 'Open Sans', sans-serif;
   color           : #fff;
   position        : absolute;
   overflow        : hidden;
@@ -128,7 +128,7 @@ html {
 }
 
 #customers .head h4 {
-  font-family: 'Pricedown';
+  font-family: 'BebasNeue';
   font-weight:600;
   padding: 20px 20px;
   color: #ffffff;
@@ -213,7 +213,7 @@ html {
 
 .amount-dialog {
 
-  font-family: 'Open Sans', sans-serif; 
+  font-family: 'Open Sans', sans-serif;
   color           : #fff;
   position        : absolute;
   overflow        : hidden;
@@ -258,7 +258,7 @@ html {
   box-shadow: 1px 1px 10px 4px rgba(0, 0, 0, 0.4);
 }
 .amount-dialog .head h4{
-  font-family: 'Pricedown';
+  font-family: 'BebasNeue';
   font-weight:600;
   padding: 20px 20px;
   color: #ffffff;

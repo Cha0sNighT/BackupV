@@ -1088,7 +1088,7 @@ ESX.ShowInventory = function()
 
     if ESX.PlayerData.inventory[i].count > 0 then
       table.insert(elements, {
-        label     = ESX.PlayerData.inventory[i].label .. ' x' .. ESX.PlayerData.inventory[i].count,
+        label     = ESX.PlayerData.inventory[i].label .. ' | ' .. ESX.PlayerData.inventory[i].count,
         count     = ESX.PlayerData.inventory[i].count,
         type      = 'item_standard',
         value     = ESX.PlayerData.inventory[i].name,
@@ -1109,7 +1109,7 @@ ESX.ShowInventory = function()
       local ammo = GetAmmoInPedWeapon(playerPed, weaponHash)
 
       table.insert(elements, {
-        label     = Config.Weapons[i].label .. ' x1 [' .. ammo .. ']',
+        label     = Config.Weapons[i].label .. ' | Mun : ' .. ammo,
         count     = 1,
         type      = 'item_weapon',
         value     = Config.Weapons[i].name,
@@ -1166,7 +1166,7 @@ ESX.ShowInventory = function()
               local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
               local closestPed = GetPlayerPed(closestPlayer)
 
-              if closestPlayer ~= -1 or closestDistance > 3.0 then
+              if closestPlayer ~= -1 or closestDistance < 3.0 then
                -- PERSONNE
                if not IsPedSittingInAnyVehicle(closestPed) then
                 TriggerServerEvent('esx:giveInventoryItem', GetPlayerServerId(closestPlayer), type, item, 1)

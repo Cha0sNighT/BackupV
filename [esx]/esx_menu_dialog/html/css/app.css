@@ -4,8 +4,8 @@
 }
 
 @font-face {
-  font-family: pcdown;
-  src: url('../fonts/pdown.ttf');
+  font-family: bebas;
+  src: url('../fonts/BebasNeue.ttf');
 }
 
 #cursor {
@@ -15,7 +15,7 @@
 }
 
 #controls {
-  font-family   : pcdown;
+  font-family   : bebas;
   font-size     : 3em;
   color         : #FFF;
   position      : absolute;

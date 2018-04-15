@@ -78,7 +78,7 @@ AddEventHandler('esx_shop:hasExitedMarker', function(zone)
 end)
 
 -- Create Blips
-Citizen.CreateThread(function()
+--[[Citizen.CreateThread(function()
 	for k,v in pairs(Config.Zones) do
   	for i = 1, #v.Pos, 1 do
 		local blip = AddBlipForCoord(v.Pos[i].x, v.Pos[i].y, v.Pos[i].z)
@@ -92,7 +92,7 @@ Citizen.CreateThread(function()
 		EndTextCommandSetBlipName(blip)
 		end
 	end
-end)
+end)--]]
 
 -- Display markers
 Citizen.CreateThread(function()

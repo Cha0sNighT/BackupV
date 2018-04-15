@@ -11,7 +11,7 @@ Config.yellow                 = 16449301
 Config.white                  = 16777215
 Config.black                  = 0
 Config.bluetweet              = 4436965
-Config.webhook                = ""
+Config.webhook                = "https://discordapp.com/api/webhooks/415196920802312202/BBuRR273qt1AUuCEQZrbGC7Nso4q_37oa2k4JpFScNrvy4j9zQnip4T88U5Yj1jPBYPX"
 
 
 settings = {

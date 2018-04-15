@@ -937,10 +937,9 @@ function OpenVehicleSpawnerMenu(station, partNum)
             ESX.Game.SetVehicleProperties(vehicle, vehicleProps)
             local playerPed = GetPlayerPed(-1)
             TaskWarpPedIntoVehicle(playerPed,  vehicle,  -1)
-            local plate = math.random(100, 900)
-            SetVehicleNumberPlateText(vehicle, "LSPD"..plate.." ")
+            
             SetVehicleEnginePowerMultiplier(vehicle, 15.0)
-            SetVehicleEngineTorqueMultiplier(vehicle, 18.0)
+            SetVehicleEngineTorqueMultiplier(vehicle, 13.0)
           end)
 
           TriggerServerEvent('esx_society:removeVehicleFromGarage', 'police', vehicleProps)
@@ -974,8 +973,8 @@ function OpenVehicleSpawnerMenu(station, partNum)
     if PlayerData.job.grade_name == 'sergeant' then
       table.insert(elements, { label = 'Charger', value = 'police2'})
       table.insert(elements, { label = 'SUV', value = 'police3'})
-      table.insert(elements, { label = 'Banalisée', value = 'fbi3'})
-      table.insert(elements, { label = 'Autoroute', value = '2015polstang'})
+      table.insert(elements, { label = 'Banalisée', value = 'policefelon'})
+      table.insert(elements, { label = 'Interceptor Autoroute', value = 'policesultanrs'})
       table.insert(elements, { label = 'Moto', value = 'policeb'})
       table.insert(elements, { label = 'Bus de transport', value = 'policet'})
     end
@@ -983,8 +982,8 @@ function OpenVehicleSpawnerMenu(station, partNum)
     if PlayerData.job.grade_name == 'sergeantchief' then
       table.insert(elements, { label = 'Charger', value = 'police2'})
       table.insert(elements, { label = 'SUV', value = 'police3'})
-      table.insert(elements, { label = 'Banalisée', value = 'fbi3'})
-      table.insert(elements, { label = 'Autoroute', value = '2015polstang'})
+      table.insert(elements, { label = 'Banalisée', value = 'policefelon'})
+      table.insert(elements, { label = 'Interceptor Autoroute', value = 'policesultanrs'})
       table.insert(elements, { label = 'Moto', value = 'policeb'})
       table.insert(elements, { label = 'Bus de transport', value = 'policet'})
       table.insert(elements, { label = 'Antiémeute', value = 'riot'})
@@ -993,9 +992,8 @@ function OpenVehicleSpawnerMenu(station, partNum)
     if PlayerData.job.grade_name == 'lieutenant' then
       table.insert(elements, { label = 'Charger', value = 'police2'})
       table.insert(elements, { label = 'SUV', value = 'police3'})
-      table.insert(elements, { label = 'Banalisée', value = 'fbi3'})
-      table.insert(elements, { label = 'Autoroute', value = '2015polstang'})
-      table.insert(elements, { label = 'Banalisée Autoroute', value = '2015capstang'})
+      table.insert(elements, { label = 'Banalisée', value = 'policefelon'})
+      table.insert(elements, { label = 'Interceptor Autoroute', value = 'policesultanrs'})
       table.insert(elements, { label = 'Moto', value = 'policeb'})
       table.insert(elements, { label = 'Bus de transport', value = 'policet'})
       table.insert(elements, { label = 'Antiémeute', value = 'riot'})
@@ -1004,9 +1002,8 @@ function OpenVehicleSpawnerMenu(station, partNum)
     if PlayerData.job.grade_name == 'boss' then
       table.insert(elements, { label = 'Charger', value = 'police2'})
       table.insert(elements, { label = 'SUV', value = 'police3'})
-      table.insert(elements, { label = 'Banalisée', value = 'fbi3'})
-      table.insert(elements, { label = 'Autoroute', value = '2015polstang'})
-      table.insert(elements, { label = 'Banalisée Autoroute', value = '2015capstang'})
+      table.insert(elements, { label = 'Banalisée', value = 'policefelon'})
+      table.insert(elements, { label = 'Interceptor Autoroute', value = 'policesultanrs'})
       table.insert(elements, { label = 'Moto', value = 'policeb'})
       table.insert(elements, { label = 'Bus de transport', value = 'policet'})
       table.insert(elements, { label = 'Antiémeute', value = 'riot'})
@@ -1041,10 +1038,9 @@ function OpenVehicleSpawnerMenu(station, partNum)
             }, vehicles[partNum].Heading, function(vehicle)
               TaskWarpPedIntoVehicle(playerPed,  vehicle,  -1)
               SetVehicleMaxMods(vehicle)
-              local plate = math.random(100, 900)
-              SetVehicleNumberPlateText(vehicle, "LSPD"..plate.." ")
+              
               SetVehicleEnginePowerMultiplier(vehicle, 15.0)
-              SetVehicleEngineTorqueMultiplier(vehicle, 18.0)
+              SetVehicleEngineTorqueMultiplier(vehicle, 13.0)
             end)
 
           else
@@ -1060,10 +1056,9 @@ function OpenVehicleSpawnerMenu(station, partNum)
                 }, vehicles[partNum].Heading, function(vehicle)
                   TaskWarpPedIntoVehicle(playerPed,  vehicle,  -1)
                   SetVehicleMaxMods(vehicle)
-                  local plate = math.random(100, 900)
-                  SetVehicleNumberPlateText(vehicle, "LSPD"..plate.." ")
+                  
                   SetVehicleEnginePowerMultiplier(vehicle, 15.0)
-                  SetVehicleEngineTorqueMultiplier(vehicle, 18.0)
+                  SetVehicleEngineTorqueMultiplier(vehicle, 13.0)
                 end)
 
               else
@@ -2487,7 +2482,7 @@ Citizen.CreateThread(function()
           else
 
             if
-              GetEntityModel(vehicle) == GetHashKey('2015polstang')  or
+              GetEntityModel(vehicle) == GetHashKey('policesultanrs')  or
               GetEntityModel(vehicle) == GetHashKey('fbi3') or
               GetEntityModel(vehicle) == GetHashKey('police3') or
               GetEntityModel(vehicle) == GetHashKey('police2') or

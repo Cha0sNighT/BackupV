@@ -36,6 +36,7 @@ Locales['fr'] = {
   ['vegetables'] = 'légumes',
   ['tacos'] = 'tacos',
   ['burger'] = 'burger',
+  ['drpepper'] = 'Dr Pepper',
   ['drank_coke'] = 'Vous avez bu un ~b~Cola',
   ['eat_burger'] = 'Vous avez mangé un ~b~Burger',
   ['eat_taco'] = 'Vous avez mangé un ~b~Tacos',

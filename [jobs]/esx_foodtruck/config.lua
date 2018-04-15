@@ -65,7 +65,8 @@ Config.Zones = {
         Items = {
             { name = 'bread',      label = _U('bread'),   price = 2 },
             { name = 'vegetables',      label = _U('vegetables'),   price = 4 },
-            { name = 'meat',       label = _U('meat'),    price = 10 }
+            { name = 'meat',       label = _U('meat'),    price = 10 },
+						{ name = 'drpepper',			label = _U('drpepper'),			price = 2}
         },
     }
 }

@@ -48,8 +48,8 @@ Config.HelicopterSpawner = {
 Config.Zones = {
 
   HospitalInteriorEntering1 = { -- ok
-  Pos  = { x = 1151.12, y = -1529.65, z = 34.38 }, -- ENTREE INTERIEUR
-  Size = { x = 2.5, y = 2.5, z = 1.0 },
+  Pos  = { x = 1150.80, y = -1529.85, z = 34.39 }, -- ENTREE INTERIEUR
+  Size = { x = 1.6, y = 1.6, z = 1.0 },
   Type = 27
   },
 

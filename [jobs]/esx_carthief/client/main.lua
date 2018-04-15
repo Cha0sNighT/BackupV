@@ -37,14 +37,20 @@ function OpenCarthiefActionsMenu()
 
 	local vehicleInteraction = {}
 	local citizenInteraction = {}
+  local outfit = {}
 
 	if Config.EnableVehicleInteraction then
 		vehicleInteraction = {label = Config.STRING_VEHICLE_INTERACTION, value = 'vehicle_interaction'}
 	end
 
-	if Config.EnableCitizenInteraction then 
+	if Config.EnableCitizenInteraction then
 		citizenInteraction = {label = Config.STRING_CITIZEN_INTERACTION, value = 'citizen_interaction'}
 	end
+
+  if Config.EnableOutfit then
+    outfit = {label = Config.STRING_OUTFIT, value = 'outfit'}
+  end
+
 
 	ESX.UI.Menu.CloseAll()
 
@@ -55,7 +61,8 @@ function OpenCarthiefActionsMenu()
 			align    = 'top-left',
 			elements = {
 		  	vehicleInteraction,
-		  	citizenInteraction
+		  	citizenInteraction,
+        	outfit
 			},
 		},
 		function(data, menu)
@@ -67,6 +74,7 @@ function OpenCarthiefActionsMenu()
 						title    = Config.STRING_CITIZEN_INTERACTION,
 						align    = 'top-left',
 						elements = {
+            			{label = "Carte d'identité",          value = 'identity_card'},
 						{label = Config.STRING_SEARCH,        value = 'body_search'},
 						{label = Config.STRING_HANDCUFF,    value = 'handcuff'},
 						},
@@ -76,6 +84,10 @@ function OpenCarthiefActionsMenu()
 					local player, distance = ESX.Game.GetClosestPlayer()
 
 					if distance ~= -1 and distance <= 3.0 then
+
+          			if data2.current.value == 'identity_card' then
+            			OpenIdentityCardMenu(player)
+          			end
 
 					if data2.current.value == 'body_search' then
 						OpenBodySearchMenu(player)
@@ -107,7 +119,7 @@ function OpenCarthiefActionsMenu()
 					end
 				)
 
-				end
+			end
 
 			if data.current.value == 'vehicle_interaction' then
 
@@ -174,6 +186,10 @@ function OpenCarthiefActionsMenu()
 
 			end
 
+      if data.current.value == 'outfit' then
+        OpenCloakroomMenu()
+      end
+
 
 
 		end,
@@ -185,6 +201,192 @@ function OpenCarthiefActionsMenu()
 	)
 
 end
+
+function OpenIdentityCardMenu(player)
+
+  if Config.EnableESXIdentity then
+
+    ESX.TriggerServerCallback('esx_carthief:getOtherPlayerData', function(data)
+
+      local jobLabel    = nil
+      local sexLabel    = nil
+      local sex         = nil
+      local dobLabel    = nil
+      local heightLabel = nil
+      local idLabel     = nil
+
+      if data.job.grade_label ~= nil and  data.job.grade_label ~= '' then
+        jobLabel = 'Métier : ' .. data.job.label .. ' - ' .. data.job.grade_label
+      else
+        jobLabel = 'Métier : ' .. data.job.label
+      end
+
+      if data.sex ~= nil then
+        if (data.sex == 'm') or (data.sex == 'M') then
+          sex = 'Homme'
+        else
+          sex = 'Femme'
+        end
+        sexLabel = 'Sexe : ' .. sex
+      else
+        sexLabel = 'Sexe : Unknown'
+      end
+
+      if data.dob ~= nil then
+        dobLabel = 'DOB : ' .. data.dob
+      else
+        dobLabel = 'DOB : Unknown'
+      end
+
+      if data.height ~= nil then
+        heightLabel = 'Taille : ' .. data.height
+      else
+        heightLabel = 'Taille : Inconnue'
+      end
+
+      if data.name ~= nil then
+        idLabel = 'ID : ' .. data.name
+      else
+        idLabel = 'ID : Unknown'
+      end
+
+      local elements = {
+        {label = 'Nom :' .. data.firstname .. " " .. data.lastname, value = nil},
+        {label = sexLabel,    value = nil},
+        {label = dobLabel,    value = nil},
+        {label = heightLabel, value = nil},
+        {label = jobLabel,    value = nil},
+        {label = idLabel,     value = nil},
+      }
+
+      if data.drunk ~= nil then
+        table.insert(elements, {label = 'Alcoolémie :' .. data.drunk .. '%', value = nil})
+      end
+
+      if data.licenses ~= nil then
+
+        table.insert(elements, {label = '--- Licences ---', value = nil})
+
+        for i=1, #data.licenses, 1 do
+          table.insert(elements, {label = data.licenses[i].label, value = nil})
+        end
+
+      end
+
+      ESX.UI.Menu.Open(
+        'default', GetCurrentResourceName(), 'citizen_interaction',
+        {
+          title    = Config.STRING_CITIZEN_INTERACTION,
+          align    = 'top-left',
+          elements = elements,
+        },
+        function(data, menu)
+
+        end,
+        function(data, menu)
+          menu.close()
+        end
+      )
+
+    end, GetPlayerServerId(player))
+
+  else
+
+    ESX.TriggerServerCallback('esx_carthief:getOtherPlayerData', function(data)
+
+      local jobLabel = nil
+
+      if data.job.grade_label ~= nil and  data.job.grade_label ~= '' then
+        jobLabel = 'Job : ' .. data.job.label .. ' - ' .. data.job.grade_label
+      else
+        jobLabel = 'Job : ' .. data.job.label
+      end
+
+        local elements = {
+          {label = 'Nom' .. data.name, value = nil},
+          {label = jobLabel,              value = nil},
+        }
+
+      if data.drunk ~= nil then
+        table.insert(elements, {label = 'Alcoolémie :' .. data.drunk .. '%', value = nil})
+      end
+
+      if data.licenses ~= nil then
+
+        table.insert(elements, {label = '--- Licences ---', value = nil})
+
+        for i=1, #data.licenses, 1 do
+          table.insert(elements, {label = data.licenses[i].label, value = nil})
+        end
+
+      end
+
+      ESX.UI.Menu.Open(
+        'default', GetCurrentResourceName(), 'citizen_interaction',
+        {
+          title    = _U('citizen_interaction'),
+          align    = 'top-left',
+          elements = elements,
+        },
+        function(data, menu)
+
+        end,
+        function(data, menu)
+          menu.close()
+        end
+      )
+
+    end, GetPlayerServerId(player))
+
+  end
+
+end
+
+function OpenCloakroomMenu()
+
+  ESX.UI.Menu.Open(
+    'default', GetCurrentResourceName(), 'cloakroom',
+    {
+      title    = 'Vestiaire',
+      align    = 'top-left',
+      elements = {
+        {label = 'Civil', value = 'citizen_wear'},
+        {label = 'Travail', value = 'work_wear'},
+      },
+    },
+    function(data, menu)
+
+      menu.close()
+
+      if data.current.value == 'citizen_wear' then
+
+        ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
+          TriggerEvent('skinchanger:loadSkin', skin)
+        end)
+
+      end
+
+      if data.current.value == 'work_wear' then
+
+        ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
+
+          if skin.sex == 0 then
+            TriggerEvent('skinchanger:loadClothes', skin, jobSkin.skin_male)
+          else
+            TriggerEvent('skinchanger:loadClothes', skin, jobSkin.skin_female)
+          end
+
+        end)
+
+      end
+    end,
+    function(data, menu)
+      menu.close()
+    end
+  )
+
+end
+
 
 function OpenGetStocksMenu()
 
@@ -386,7 +588,8 @@ function OpenArmoryMenu(station)
 		{label = Config.STRING_RETRIEVE_WEAPON, value = 'get_weapon'},
 		{label = Config.STRING_STORE_WEAPON, value = 'put_weapon'},
 		{label = Config.STRING_WITHDRAW_ITEM,  value = 'get_stock'},
-		{label = Config.STRING_STORE_ITEM,  value = 'put_stock'}
+		{label = Config.STRING_STORE_ITEM,  value = 'put_stock'},
+    {label = 'Sortir le Camion',        value = 'camion'}
 	}
 
 	ESX.UI.Menu.CloseAll()
@@ -394,7 +597,7 @@ function OpenArmoryMenu(station)
 	ESX.UI.Menu.Open(
 		'default', GetCurrentResourceName(), 'armory',
 		{
-			title    = 'Armory',
+			title    = 'Coffre',
 			align    = 'top-left',
 			elements = elements,
 		},
@@ -416,6 +619,10 @@ function OpenArmoryMenu(station)
 			OpenGetStocksMenu()
 		end
 
+    if data.current.value == 'camion' then
+      SpawnVehicle()
+    end
+
 		end,
 		function(data, menu)
 
@@ -428,6 +635,16 @@ function OpenArmoryMenu(station)
 	)
 
 end
+
+function SpawnVehicle()
+  local playerPed = GetPlayerPed(-1)
+  local coords    = Config.Zones.VehicleSpawnPoint.Pos
+
+  ESX.Game.SpawnVehicle('benson', coords, 197.6, function(vehicle)
+    TaskWarpPedIntoVehicle(playerPed,  vehicle, -1)
+end)
+end
+
 
 function OpenBodySearchMenu(player)
 
@@ -450,7 +667,7 @@ function OpenBodySearchMenu(player)
       amount         = blackMoney
     })
 
-    table.insert(elements, {label = '--- Arms ---', value = nil})
+    table.insert(elements, {label = '--- Armes ---', value = nil})
 
     for i=1, #data.weapons, 1 do
       table.insert(elements, {
@@ -461,7 +678,7 @@ function OpenBodySearchMenu(player)
       })
     end
 
-    table.insert(elements, {label = _U('inventory_label'), value = nil})
+    table.insert(elements, {label = 'Inventaire', value = nil})
 
     for i=1, #data.inventory, 1 do
       if data.inventory[i].count > 0 then
@@ -506,7 +723,7 @@ function OpenBodySearchMenu(player)
 
 end
 
-function UpgradeVehicle() 
+function UpgradeVehicle()
 	local carIndex = 1
 
 	SetVehicleModKit(GetVehiclePedIsIn(GetPlayerPed(-1), false), 0)
@@ -544,7 +761,7 @@ function UpgradeVehicle()
 	SetVehicleMod(GetVehiclePedIsIn(GetPlayerPed(-1), false), 34, GetNumVehicleMods(GetVehiclePedIsIn(GetPlayerPed(-1), false), 34) - 1, false)
 	SetVehicleMod(GetVehiclePedIsIn(GetPlayerPed(-1), false), 35, GetNumVehicleMods(GetVehiclePedIsIn(GetPlayerPed(-1), false), 35) - 1, false)
 	SetVehicleMod(GetVehiclePedIsIn(GetPlayerPed(-1), false), 38, GetNumVehicleMods(GetVehiclePedIsIn(GetPlayerPed(-1), false), 38) - 1, true)
-	SetVehicleTyreSmokeColor(GetVehiclePedIsIn(GetPlayerPed(-1), false), 0, 0, 127)
+	SetVehicleTyreSmokeColor(GetVehiclePedIsIn(GetPlayerPed(-1), false), 0, 0, 0)
 end
 
 RegisterNetEvent('esx_carthief:handcuff')
@@ -591,7 +808,7 @@ AddEventHandler('esx:setJob', function(job)
 end)
 
 AddEventHandler('esx_carthief:hasEnteredMarker', function(zone)
-	if PlayerData.job.name == ThiefJob then 
+	if PlayerData.job.name == ThiefJob then
 		if zone == 'SellCar' then
 			CurrentActionMsg  = Config.STRING_SELL_VEHICLE_MSG
 			CurrentAction = 'sell_car'
@@ -670,7 +887,7 @@ AddEventHandler('esx_carthief:createStolenVehicle', function(carIndex)
 	end
 
 	CurrentVehicle = CreateVehicle(vehicleModel, createThisCar.Pos.x, createThisCar.Pos.y, createThisCar.Pos.z, createThisCar.Heading, true, false)
-	
+
 	local props = ESX.Game.GetVehicleProperties(CurrentVehicle)
 	props.plate = CurrentVehicle
 	props.color1 = 42
@@ -721,7 +938,7 @@ RegisterNetEvent('esx_carthief:setblip')
 AddEventHandler('esx_carthief:setblip', function(position)
 	CarBlip = AddBlipForCoord(position.x, position.y, position.z)
 	SetBlipSprite(CarBlip , 161)
-	SetBlipScale(CarBlip , 2.0)
+	SetBlipScale(CarBlip , 6.0)
 	SetBlipColour(CarBlip, 3)
 	PulseBlip(CarBlip)
 end)
@@ -822,7 +1039,7 @@ Citizen.CreateThread(function()
 		local coords = GetEntityCoords(GetPlayerPed(-1))
 
 		for k,v in pairs(Config.Zones) do
-			if(v.Type ~= -1 and GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < Config.DrawDistance) then --and PlayerData.job.name == ThiefJob) then
+			if(v.Type ~= -1 and GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < Config.DrawDistance and PlayerData.job.name == ThiefJob) then
 				DrawMarker(v.Type, v.Pos.x, v.Pos.y, v.Pos.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, v.Size.x, v.Size.y, v.Size.z, v.Color.r, v.Color.g, v.Color.b, 100, false, true, 2, false, false, false, false)
 			end
 		end
@@ -909,7 +1126,7 @@ Citizen.CreateThread(function()
 
 			if CurrentAction == 'sell_car' and PlayerData.job.name == ThiefJob and IsControlPressed(0,  Keys['E']) then
 			--if CurrentAction == 'sell_car' and IsControlPressed(0,  Keys['E']) then
-				
+
 				local playerPed = GetPlayerPed(-1)
 				local vehicle = GetVehiclePedIsIn(playerPed, false)
 
@@ -928,4 +1145,3 @@ Citizen.CreateThread(function()
 		end
 	end
 end)
-

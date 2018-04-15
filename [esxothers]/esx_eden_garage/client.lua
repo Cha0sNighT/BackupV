@@ -70,7 +70,7 @@ function OpenMenuGarage()
 	local elements = {
 		{label = "Sortir un véhicule", value = 'list_vehicles'},
 		{label = "Rentrer un véhicule", value = 'stock_vehicle'},
-		--{label = "Return Vehicle ("..Config.Price.."$)", value = 'return_vehicle'},
+		{label = "Assurance ("..Config.Price.."$)", value = 'return_vehicle'},
 	}
 
 
@@ -90,9 +90,9 @@ function OpenMenuGarage()
 			if(data.current.value == 'stock_vehicle') then
 				StockVehicleMenu()
 			end
-			--if(data.current.value == 'return_vehicle') then
-			--	ReturnVehicleMenu()
-			--end
+			if(data.current.value == 'return_vehicle') then
+				ReturnVehicleMenu()
+			end
 
 			local playerPed = GetPlayerPed(-1)
 			SpawnVehicle(data.current.value)

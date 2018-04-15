@@ -62,7 +62,7 @@ Config.Zones = {
   },
 
   Accessoires = {
-    Items = {silencieux, flashlight, grip, yusuf, blackberry},
+    Items = {silencieux, flashlight, grip, yusuf, blackberry, clip},
     Pos = {
       {x = 20.292207717896, y = -1106.6417236328, z = 28.807027587891},
       {x = -663.97808837891, y = -935.17761230469, z = 21.819225540161},

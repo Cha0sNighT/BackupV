@@ -10,7 +10,7 @@ Config.Locale = 'fr'
 
 Config.Zones = {
   MecanoActions = {
-    Pos = { x = 964.91088867188, y = -3003.2895507813, z = -40.639896392822 }, --CLOAKROOM
+    Pos = { x = 960.24, y = -3006.66, z = -40.62 }, --CLOAKROOM
     Size = { x = 1.5, y = 1.5, z = 1.0 },
     Color = { r = 204, g = 204, b = 0 },
     Type = 27,

@@ -369,7 +369,7 @@ local function HarvestWeed(source)
 		return
 	end
 
-	SetTimeout(5, function()
+	SetTimeout(3000, function()
 
 		if PlayersHarvestingWeed[source] == true then
 
@@ -412,7 +412,7 @@ end)
 
 local function TransformWeed(source)
 
-	SetTimeout(5, function()
+	SetTimeout(7000, function()
 
 		if PlayersTransformingWeed[source] == true then
 
@@ -462,7 +462,7 @@ local function SellWeed(source)
 
 
 
-	SetTimeout(5, function()
+	SetTimeout(5000, function()
 
 		if PlayersSellingWeed[source] == true then
 
@@ -478,7 +478,7 @@ local function SellWeed(source)
                     xPlayer.addAccountMoney('black_money', 60)
                     TriggerClientEvent('esx:showNotification', source, _U('sold_one_weed'))
                 elseif CopsConnected == 1 then
-                    xPlayer.addAccountMoney('black_money', 60)
+                    xPlayer.addAccountMoney('black_money', 70)
                     TriggerClientEvent('esx:showNotification', source, _U('sold_one_weed'))
                 elseif CopsConnected == 2 then
                     xPlayer.addAccountMoney('black_money', 100)

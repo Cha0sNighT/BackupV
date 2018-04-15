@@ -1,7 +1,0 @@
-/home/travis/build/TomGrobbe/vMenu/vMenu/obj/Release/.NETFramework,Version=v4.6.1.AssemblyAttribute.cs
-/home/travis/build/TomGrobbe/vMenu/vMenu/bin/Release/vMenuClient.net.pdb
-/home/travis/build/TomGrobbe/vMenu/vMenu/bin/Release/vMenuClient.net.dll
-/home/travis/build/TomGrobbe/vMenu/vMenu/obj/Release/vMenuClient.net.dll
-/home/travis/build/TomGrobbe/vMenu/vMenu/obj/Release/vMenuClient.net.pdb
-/home/travis/build/TomGrobbe/vMenu/vMenu/bin/Release/CitizenFX.Core.dll
-/home/travis/build/TomGrobbe/vMenu/vMenu/bin/Release/NativeUI.dll

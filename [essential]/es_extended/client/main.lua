@@ -38,7 +38,7 @@ AddEventHandler('esx:playerLoaded', function(xPlayer)
 
   end
 
-  local jobTpl = '<div>{{job_label}} - {{grade_label}}</div>'
+  local jobTpl = '<div>{{job_label}}<br />{{grade_label}}</div>'
 
   if xPlayer.job.grade_label == '' then
     jobTpl = '<div>{{job_label}}</div>'

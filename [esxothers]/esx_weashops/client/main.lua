@@ -5,6 +5,7 @@ local CurrentAction           = nil
 local CurrentActionMsg        = ''
 local CurrentActionData       = {}
 local Licenses                = {}
+local LicensePrice = Config.LicensePrice
 
 Citizen.CreateThread(function()
   while ESX == nil do
@@ -20,29 +21,42 @@ AddEventHandler('esx_weashop:loadLicenses', function (licenses)
   end
 end)
 
-AddEventHandler('onClientMapStart', function()
-  ESX.TriggerServerCallback('esx_weashop:requestDBItems', function(ShopItems)
-    for k,v in pairs(ShopItems) do
-      Config.Zones[k].Items = v
-    end
-  end)
-end)
-
-function OpenBuyLicenseMenu (zone)
+function OpenMainMenu(zone)
   ESX.UI.Menu.CloseAll()
 
   ESX.UI.Menu.Open(
-    'default', GetCurrentResourceName(), 'shop_license',
+    'default', GetCurrentResourceName(), 'wea_cat',
     {
-      title = _U('buy_license'),
+      title = "Weapon Categories",
       elements = {
-        { label = _U('yes') .. ' ($' .. Config.LicensePrice .. ')', value = 'yes' },
-        { label = _U('no'), value = 'no' },
+        { label = "Catégorie 1", value = 'wl_1' },
+        { label = "Catégorie 2", value = 'wl_2' },
+        { label = "Catégorie 3", value = 'wl_3' },
       }
     },
     function (data, menu)
-      if data.current.value == 'yes' then
-        TriggerServerEvent('esx_weashop:buyLicense')
+
+      local value = data.current.value
+      local rvalue = value
+
+      if data.current.value == 'wl_1' then
+        if Licenses['weapon'] or Licenses['weapon2'] or Licenses['weapon3'] then
+          OpenShopMenu(rvalue, zone)
+        else
+          OpenBuyLicenseMenu(rvalue, zone)
+        end
+      elseif data.current.value == 'wl_2' then
+        if Licenses['weapon2'] or Licenses['weapon3'] then
+          OpenShopMenu(rvalue, zone)
+        else
+          OpenBuyLicenseMenu(rvalue, zone)
+        end
+      elseif data.current.value == 'wl_3' then
+        if Licenses['weapon3'] then
+          OpenShopMenu(rvalue, zone)
+        else
+          OpenBuyLicenseMenu(rvalue, zone)
+        end
       end
 
       menu.close()
@@ -53,45 +67,174 @@ function OpenBuyLicenseMenu (zone)
   )
 end
 
-function OpenShopMenu(zone)
+function OpenBuyLicenseMenu(rvalue, zone)
 
-  local elements = {}
+  local price = 0
 
-  for i=1, #Config.Zones[zone].Items, 1 do
+  local wtype = nil
 
-    local item = Config.Zones[zone].Items[i]
-
-    table.insert(elements, {
-      label     = item.label .. ' - <span style="color:green;">$' .. item.price .. ' </span>',
-      realLabel = item.label,
-      value     = item.name,
-      price     = item.price
-    })
-
+  if rvalue == 'wl_1' then
+    price = LicensePrice * 1
+    wtype = 'weapon'
+  elseif rvalue == 'wl_2' then
+    price = LicensePrice * 3
+    wtype = 'weapon2'
+  elseif rvalue == 'wl_3' then
+    price = LicensePrice * 10
+    wtype = 'weapon3'
   end
-
 
   ESX.UI.Menu.CloseAll()
 
   ESX.UI.Menu.Open(
-    'default', GetCurrentResourceName(), 'shop',
+    'default', GetCurrentResourceName(), 'shop_license',
     {
-      title  = _U('shop'),
-      elements = elements
+      title = _U('buy_license'),
+      elements = {
+        { label = _U('yes') .. ' ($' .. price .. ')', value = 'yes' },
+        { label = _U('no'), value = 'no' },
+      }
     },
-    function(data, menu)
-      TriggerServerEvent('esx_weashop:buyItem', data.current.value, data.current.price, zone)
-    end,
-    function(data, menu)
-
+    function (data, menu)
+      if data.current.value == 'yes' then
+        TriggerServerEvent('esx_weashop:buyLicense', price, wtype)
+      end
       menu.close()
-
-      CurrentAction     = 'shop_menu'
-      CurrentActionMsg  = _U('shop_menu')
-      CurrentActionData = {zone = zone}
+    end,
+    function (data, menu)
+      menu.close()
     end
   )
+
 end
+
+function OpenShopMenu(rvalue, zone)
+  local elements = {}
+
+  if rvalue == "wl_1" then
+    for i=1, #Config.Zones[zone].Items, 1 do
+
+      local item = Config.Zones[zone].Items[i]
+
+      table.insert(elements, {
+        label     = item.label .. ' - <span style="color:green;">$' .. item.price .. ' </span>',
+        realLabel = item.label,
+        value     = item.name,
+        price     = item.price
+      })
+
+    end
+
+
+    ESX.UI.Menu.CloseAll()
+
+    ESX.UI.Menu.Open(
+      'default', GetCurrentResourceName(), 'shop',
+      {
+        title  = _U('shop'),
+        elements = elements
+      },
+      function(data, menu)
+        TriggerServerEvent('esx_weashop:buyItem', data.current.value, data.current.price, zone)
+      end,
+      function(data, menu)
+
+        menu.close()
+
+        CurrentAction     = 'shop_menu'
+        CurrentActionMsg  = _U('shop_menu')
+        CurrentActionData = {zone = zone}
+      end
+    )
+  elseif rvalue == "wl_2" then
+    for i=1, #Config.Zones[zone].Items1, 1 do
+
+      local item = Config.Zones[zone].Items1[i]
+
+      table.insert(elements, {
+        label     = item.label .. ' - <span style="color:green;">$' .. item.price .. ' </span>',
+        realLabel = item.label,
+        value     = item.name,
+        price     = item.price
+      })
+
+    end
+
+
+    ESX.UI.Menu.CloseAll()
+
+    ESX.UI.Menu.Open(
+      'default', GetCurrentResourceName(), 'shop',
+      {
+        title  = _U('shop'),
+        elements = elements
+      },
+      function(data, menu)
+        TriggerServerEvent('esx_weashop:buyItem', data.current.value, data.current.price, zone)
+      end,
+      function(data, menu)
+
+        menu.close()
+
+        CurrentAction     = 'shop_menu'
+        CurrentActionMsg  = _U('shop_menu')
+        CurrentActionData = {zone = zone}
+      end
+    )
+  elseif rvalue == "wl_3" then
+    for i=1, #Config.Zones[zone].Items2, 1 do
+
+      local item = Config.Zones[zone].Items2[i]
+
+      table.insert(elements, {
+        label     = item.label .. ' - <span style="color:green;">$' .. item.price .. ' </span>',
+        realLabel = item.label,
+        value     = item.name,
+        price     = item.price
+      })
+
+    end
+
+
+    ESX.UI.Menu.CloseAll()
+
+    ESX.UI.Menu.Open(
+      'default', GetCurrentResourceName(), 'shop',
+      {
+        title  = _U('shop'),
+        elements = elements
+      },
+      function(data, menu)
+        TriggerServerEvent('esx_weashop:buyItem', data.current.value, data.current.price, zone)
+      end,
+      function(data, menu)
+
+        menu.close()
+
+        CurrentAction     = 'shop_menu'
+        CurrentActionMsg  = _U('shop_menu')
+        CurrentActionData = {zone = zone}
+      end
+    )
+  end
+end
+
+RegisterNetEvent('esx_weashop:clipcli')
+AddEventHandler('esx_weashop:clipcli', function()
+  ped = GetPlayerPed(-1)
+  if IsPedArmed(ped, 4) then
+    hash=GetSelectedPedWeapon(ped)
+    if hash~=nil then
+      TriggerServerEvent('esx_weashop:remove')
+      AddAmmoToPed(GetPlayerPed(-1), hash,25)
+      ESX.ShowNotification("Tu as utilisé un chargeur")
+    else
+      ESX.ShowNotification("Tu n'as pas d'arme en main")
+    end
+  else
+    ESX.ShowNotification("Ce type de munition ne convient pas")
+  end
+end)
 
 AddEventHandler('esx_weashop:hasEnteredMarker', function(zone)
 
@@ -114,10 +257,10 @@ Citizen.CreateThread(function()
   if v.legal==0 then
     for i = 1, #v.Pos, 1 do
     local blip = AddBlipForCoord(v.Pos[i].x, v.Pos[i].y, v.Pos[i].z)
-    SetBlipSprite (blip, 313)
+    SetBlipSprite (blip, 119)
     SetBlipDisplay(blip, 4)
-    SetBlipScale  (blip, 0.6)
-    SetBlipColour (blip, 49)
+    SetBlipScale  (blip, 0.7)
+    SetBlipColour (blip, 1)
     SetBlipAsShortRange(blip, true)
     BeginTextCommandSetBlipName("STRING")
     AddTextComponentString(_U('map_blip'))
@@ -182,40 +325,11 @@ Citizen.CreateThread(function()
       DisplayHelpTextFromStringLabel(0, 0, 1, -1)
 
       if IsControlJustReleased(0, 38) then
-
         if CurrentAction == 'shop_menu' then
-          if Config.EnableLicense == true then
-            if Licenses['weapon'] ~= nil or Config.Zones[CurrentActionData.zone].legal == 1 then
-              OpenShopMenu(CurrentActionData.zone)
-            else
-              OpenBuyLicenseMenu()
-            end
-          else
-            OpenShopMenu(CurrentActionData.zone)
-          end
+            OpenMainMenu(CurrentActionData.zone)
         end
-
         CurrentAction = nil
-
       end
-
     end
-  end
-end)
-
-RegisterNetEvent('esx_weashop:clipcli')
-AddEventHandler('esx_weashop:clipcli', function()
-  ped = GetPlayerPed(-1)
-  if IsPedArmed(ped, 4) then
-    hash=GetSelectedPedWeapon(ped)
-    if hash~=nil then
-      TriggerServerEvent('esx_weashop:remove')
-      AddAmmoToPed(GetPlayerPed(-1), hash,25)
-      ESX.ShowNotification("tu a utilisé un chargeur")
-    else
-      ESX.ShowNotification("tu n'a pas d'arme en main")
-    end
-  else
-    ESX.ShowNotification("ce type de munision ne convient pas")
   end
 end)

@@ -1,8 +1,7 @@
+-- Script Made by FAXES
 files {
     'index.html',
     'keks.css',
-    'bankgothic.ttf',
-    'loadscreen.jpg'
 }
 
 loadscreen 'index.html'

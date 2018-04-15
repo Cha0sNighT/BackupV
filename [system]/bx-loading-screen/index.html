@@ -36,9 +36,9 @@
 if (!String.format) {
   String.format = function(format) {
     var args = Array.prototype.slice.call(arguments, 1);
-    return format.replace(/{(\d+)}/g, function(match, number) {
+    return format.replace(/{(\d+)}/g, function(match, number) { 
       return typeof args[number] != 'undefined'
-        ? args[number]
+        ? args[number] 
         : match
       ;
     });
@@ -186,8 +186,49 @@ const handlers = {
         printLog(1, String.format('Running {0} init functions', data.type));
         if(data.type) doProgress(data.type);
     },
+    startInitFunctionOrder(data)
+    {
+        count = data.count;
+        printLog(1, String.format('[{0}] Running functions of order {1} ({2} total)', data.type, data.order, data.count));
+        if(data.type) doProgress(data.type);
+    },
 
+    initFunctionInvoking(data)
+    {
+        printLog(3, String.format('Invoking {0} {1} init ({2} of {3})', data.name, data.type, data.idx, count));
+        if(data.type) doProgress(data.type);
+    },
 
+	initFunctionInvoked(data)
+	{
+        if(data.type) doProgress(data.type);
+    },
+
+    endInitFunction(data)
+    {
+        printLog(1, String.format('Done running {0} init functions', data.type));
+        if(data.type) doProgress(data.type);
+    },
+
+    startDataFileEntries(data)
+    {
+        count = data.count;
+
+        printLog(1, 'Loading map');
+        if(data.type) doProgress(data.type);
+    },
+
+    onDataFileEntry(data)
+    {
+        printLog(3, String.format('Loading {0}', data.name));
+        doProgress(data.type);
+        if(data.type) doProgress(data.type);
+    },
+
+    endDataFileEntries()
+    {
+        printLog(1, 'Done loading map');
+    },
 
     performMapLoadFunction(data)
     {
@@ -222,6 +263,11 @@ var newOrder = function newOrder(name, idx, count) {
 		return handlers.startInitFunctionOrder({ type: name, order: idx, count: count });
 	};
 };
+var newInvoke = function newInvoke(name, func, i) {
+	return function () {
+		handlers.initFunctionInvoking({ type: name, name: func, idx: i });handlers.initFunctionInvoked({ type: name });
+	};
+};
 var startEntries = function startEntries(count) {
 	return function () {
 		return handlers.startDataFileEntries({ count: count });
@@ -243,6 +289,31 @@ var newTypeWithOrder = function newTypeWithOrder(name, count) {
 		newType(name)();newOrder(name, 1, count)();
 	};
 };
+
+	const demoFuncs = [
+		newTypeWithOrder('MAP', 5),
+		newInvoke('MAP', 'meow1', 1),
+		newInvoke('MAP', 'meow2', 2),
+		newInvoke('MAP', 'meow3', 3),
+		newInvoke('MAP', 'meow4', 4),
+		newInvoke('MAP', 'meow5', 5),
+		newOrder('MAP', 2, 2),
+		newInvoke('MAP', 'meow1', 1),
+		newInvoke('MAP', 'meow2', 2),
+		startEntries(6),
+		addEntry(),
+		addEntry(),
+		addEntry(),
+		addEntry(),
+		addEntry(),
+		addEntry(),
+		stopEntries(),
+		newTypeWithOrder('INIT_SESSION', 4),
+		newInvoke('INIT_SESSION', 'meow1', 1),
+		newInvoke('INIT_SESSION', 'meow2', 2),
+		newInvoke('INIT_SESSION', 'meow3', 3),
+		newInvoke('INIT_SESSION', 'meow4', 4),
+	];
 
 	setInterval(function(){	demoFuncs.length && demoFuncs.shift()();}, 350);
 }

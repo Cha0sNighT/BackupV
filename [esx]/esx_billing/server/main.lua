@@ -124,7 +124,7 @@ ESX.RegisterServerCallback('esx_billing:payBill', function(source, cb, id)
 			for i=1, #xPlayers, 1 do
 
 				local xPlayer2 = ESX.GetPlayerFromId(xPlayers[i])
-
+				
 				if xPlayer2.identifier == sender then
 					foundPlayer = xPlayer2
 					break
@@ -144,7 +144,7 @@ ESX.RegisterServerCallback('esx_billing:payBill', function(source, cb, id)
 							},
 							function(rowsChanged)
 
-								xPlayer.removeAccountMoney('bank', amount)
+								xPlayer.removeMoney(amount)
 								foundPlayer.addMoney(amount)
 
 								TriggerClientEvent('esx:showNotification', xPlayer.source, _U('paid_invoice') .. amount)
@@ -173,7 +173,7 @@ ESX.RegisterServerCallback('esx_billing:payBill', function(source, cb, id)
 						},
 						function(rowsChanged)
 
-							xPlayer.removeAccountMoney('bank', amount)
+							xPlayer.removeMoney(amount)
 							account.addMoney(amount)
 
 							TriggerClientEvent('esx:showNotification', xPlayer.source, _U('paid_invoice') .. amount)

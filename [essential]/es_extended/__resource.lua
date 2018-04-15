@@ -48,7 +48,7 @@ files {
   'html/js/mustache.min.js',
   'html/js/app.js',
 
-  'html/fonts/pdown.ttf',
+  'html/fonts/BebasNeue.ttf',
   'html/fonts/bankgothic.ttf',
 
   'html/img/cursor.png',

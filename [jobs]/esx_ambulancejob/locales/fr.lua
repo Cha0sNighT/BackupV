@@ -59,6 +59,10 @@ Locales['fr'] = {
   ['not_enough_medikit'] = 'vous n\'avez pas de ~b~medikit~w~.',
   ['not_enough_bandage'] = 'vous n\'avez pas de ~b~bandage~w~.',
   ['healed'] = 'vous avez été soigné.',
+  ['heal_inprogress'] = 'Soin en cours.',
+  ['heal_complete'] = 'Soin terminé.',
+  ['revive_inprogress'] = 'Réanimation en cours.',
+  ['revive_complete'] = 'Réanimation terminée.',
   -- Misc
   ['facture'] = 'Facture',
   ['billing'] = 'Facture frais médicaux',

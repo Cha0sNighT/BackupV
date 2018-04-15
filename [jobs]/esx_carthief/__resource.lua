@@ -5,6 +5,7 @@ description 'ESX Car Thief Job'
 version '1.0.0'
 
 client_scripts {
+  '@esx_policejob/locales/fr.lua',
   'config.lua',
   'client/main.lua'
 }
