@@ -216,20 +216,20 @@ function OpenIdentityCardMenu(player)
       local idLabel     = nil
 
       if data.job.grade_label ~= nil and  data.job.grade_label ~= '' then
-        jobLabel = 'Métier : ' .. data.job.label .. ' - ' .. data.job.grade_label
+        jobLabel = 'Job : ' .. data.job.label .. ' - ' .. data.job.grade_label
       else
-        jobLabel = 'Métier : ' .. data.job.label
+        jobLabel = 'Job : ' .. data.job.label
       end
 
       if data.sex ~= nil then
         if (data.sex == 'm') or (data.sex == 'M') then
-          sex = 'Homme'
+          sex = 'Male'
         else
-          sex = 'Femme'
+          sex = 'Female'
         end
-        sexLabel = 'Sexe : ' .. sex
+        sexLabel = 'Sex : ' .. sex
       else
-        sexLabel = 'Sexe : Unknown'
+        sexLabel = 'Sex : Unknown'
       end
 
       if data.dob ~= nil then
@@ -239,9 +239,9 @@ function OpenIdentityCardMenu(player)
       end
 
       if data.height ~= nil then
-        heightLabel = 'Taille : ' .. data.height
+        heightLabel = 'Height : ' .. data.height
       else
-        heightLabel = 'Taille : Inconnue'
+        heightLabel = 'Height : Unknown'
       end
 
       if data.name ~= nil then
@@ -251,7 +251,7 @@ function OpenIdentityCardMenu(player)
       end
 
       local elements = {
-        {label = 'Nom :' .. data.firstname .. " " .. data.lastname, value = nil},
+        {label = _U('name') .. data.firstname .. " " .. data.lastname, value = nil},
         {label = sexLabel,    value = nil},
         {label = dobLabel,    value = nil},
         {label = heightLabel, value = nil},
@@ -260,12 +260,12 @@ function OpenIdentityCardMenu(player)
       }
 
       if data.drunk ~= nil then
-        table.insert(elements, {label = 'Alcoolémie :' .. data.drunk .. '%', value = nil})
+        table.insert(elements, {label = _U('bac') .. data.drunk .. '%', value = nil})
       end
 
       if data.licenses ~= nil then
 
-        table.insert(elements, {label = '--- Licences ---', value = nil})
+        table.insert(elements, {label = '--- Licenses ---', value = nil})
 
         for i=1, #data.licenses, 1 do
           table.insert(elements, {label = data.licenses[i].label, value = nil})
@@ -276,7 +276,7 @@ function OpenIdentityCardMenu(player)
       ESX.UI.Menu.Open(
         'default', GetCurrentResourceName(), 'citizen_interaction',
         {
-          title    = Config.STRING_CITIZEN_INTERACTION,
+          title    = _U('citizen_interaction'),
           align    = 'top-left',
           elements = elements,
         },
@@ -303,17 +303,17 @@ function OpenIdentityCardMenu(player)
       end
 
         local elements = {
-          {label = 'Nom' .. data.name, value = nil},
+          {label = _U('name') .. data.name, value = nil},
           {label = jobLabel,              value = nil},
         }
 
       if data.drunk ~= nil then
-        table.insert(elements, {label = 'Alcoolémie :' .. data.drunk .. '%', value = nil})
+        table.insert(elements, {label = _U('bac') .. data.drunk .. '%', value = nil})
       end
 
       if data.licenses ~= nil then
 
-        table.insert(elements, {label = '--- Licences ---', value = nil})
+        table.insert(elements, {label = '--- Licenses ---', value = nil})
 
         for i=1, #data.licenses, 1 do
           table.insert(elements, {label = data.licenses[i].label, value = nil})
@@ -661,7 +661,7 @@ function OpenBodySearchMenu(player)
     end
 
     table.insert(elements, {
-      label          = Config.STRING_CONFISCATE_DIRTY_MONEY .. blackMoney,
+      label          = _U('confiscate_dirty') .. blackMoney,
       value          = 'black_money',
       itemType       = 'item_account',
       amount         = blackMoney
@@ -671,19 +671,19 @@ function OpenBodySearchMenu(player)
 
     for i=1, #data.weapons, 1 do
       table.insert(elements, {
-        label          = Config.STRING_CONFISCATE .. ESX.GetWeaponLabel(data.weapons[i].name),
+        label          = _U('confiscate') .. ESX.GetWeaponLabel(data.weapons[i].name),
         value          = data.weapons[i].name,
         itemType       = 'item_weapon',
         amount         = data.ammo,
       })
     end
 
-    table.insert(elements, {label = 'Inventaire', value = nil})
+    table.insert(elements, {label = _U('inventory_label'), value = nil})
 
     for i=1, #data.inventory, 1 do
       if data.inventory[i].count > 0 then
         table.insert(elements, {
-          label          = Config.STRING_CONFISCATE .. data.inventory[i].count .. ' ' .. data.inventory[i].label,
+          label          = _U('confiscate_inv') .. data.inventory[i].count .. ' ' .. data.inventory[i].label,
           value          = data.inventory[i].name,
           itemType       = 'item_standard',
           amount         = data.inventory[i].count,
@@ -695,7 +695,7 @@ function OpenBodySearchMenu(player)
     ESX.UI.Menu.Open(
       'default', GetCurrentResourceName(), 'body_search',
       {
-        title    = Config.STRING_SEARCH,
+        title    = _U('search'),
         align    = 'top-left',
         elements = elements,
       },

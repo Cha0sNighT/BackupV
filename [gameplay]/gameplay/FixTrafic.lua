@@ -19,7 +19,7 @@ Citizen.CreateThread(function()
             -- 1.
         SetVehicleDensityMultiplierThisFrame(0.5)
         --SetPedDensityMultiplierThisFrame(0.0)
-        --SetRandomVehicleDensityMultiplierThisFrame(0.0)
+        SetRandomVehicleDensityMultiplierThisFrame(0.5)
         --SetParkedVehicleDensityMultiplierThisFrame(0.0)
         --SetScenarioPedDensityMultiplierThisFrame(0.0, 0.0)
 

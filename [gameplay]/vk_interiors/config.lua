@@ -21,7 +21,9 @@
     [18] = {id = 18, x = 1109.64, y = -3163.61, z = -37.50, h = 10.1, name = "Club Biker", destination = {19}},
     [19] = {id = 19, x = 62.49, y = 2794.92, z = 57.89, h = 324.4, name = "Sortie", destination = {18}},
     [20] = {id = 20, x = 992.86, y = -3097.86, z = -39.0035, h = 280.0, name = "LS Import", destination = {21}},
-    [21] = {id = 21, x = 1122.8, y = -1303.75, z = 33.83, h = 0.0, name = "Sortie", destination = {20}},
+    [21] = {id = 21, x = 636.64, y = 2785.1, z = 41.97, h = 0.0, name = "Sortie", destination = {20}},
+    [22] = {id = 22, x = 195.13, y = -1004.51, z = -99.57, h = 344.7, name = "Garage", destination = {23}},
+    [23] = {id = 23, x = 640.17, y = 2774.54, z = 41.42, h = 339.8, name = "Sortie", destination = {22}},
 
 
     --[29] = {id = 29,x = 446.04360961914, y = -996.23168945313, z = 30.699588546753,  name = "Entrée Poste", destination = {28}},

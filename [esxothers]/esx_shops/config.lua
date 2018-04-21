@@ -61,6 +61,13 @@ Config.Zones = {
     }
   },
 
+  Mairie = {
+    Items = {identitycard},
+    Pos = {
+      {x = -544.92, y = -204.4, z = 37.23}
+    }
+  },
+
   Accessoires = {
     Items = {silencieux, flashlight, grip, yusuf, blackberry, clip},
     Pos = {

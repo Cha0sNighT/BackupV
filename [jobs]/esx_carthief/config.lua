@@ -10,6 +10,7 @@ Config.CooldownOnStealingCar = 48 * 60
 Config.AmountOfTimeBlipWillFollowStolenCar = 5*60
 Config.EnableCitizenInteraction = true -- Handcuff and search
 Config.EnableVehicleInteraction = true -- Pick car lock
+Config.Locale                     = 'fr'
 
 
 Config.Zones = {
@@ -93,7 +94,7 @@ Config.Cars = {
     Car   = 'fmj',
     CarName = 'Vapid FMJ',
     Heading = 310.0,
-    Value = math.random(15000,25000)
+    Value = math.random(18000,25000)
   },
   {
     Pos   = {x = -721.200, y = 647.200, z = 154.200},
@@ -103,7 +104,7 @@ Config.Cars = {
     Car   = 't20',
     CarName = 'Progen T20',
     Heading = 345.0,
-    Value = math.random(15000,25000)
+    Value = math.random(18000,25000)
   },
   {
     Pos   = {x = -110.200, y = -878.200, z = 29.200},
@@ -114,7 +115,7 @@ Config.Cars = {
     WheelType = 5,
     CarName = 'Truffade Nero',
     Heading = 168.0,
-    Value = math.random(15000,25000)
+    Value = math.random(18000,25000)
   },
   {
     Pos   = {x = 953.200, y = -508.200, z = 61.200},
@@ -124,7 +125,7 @@ Config.Cars = {
     Car   = 'xa21',
     CarName = 'Ocelot XA-21',
     Heading = 31.0,
-    Value = math.random(15000,25000)
+    Value = math.random(18000,25000)
   },
   {
     Pos   = {x = 33.200, y = 6609.200, z = 33.200},

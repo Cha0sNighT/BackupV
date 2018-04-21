@@ -652,7 +652,7 @@ end
 
 function SpawnVehiclePolice()
 
-	local police = GetHashKey('police')
+	local police = GetHashKey('police2')
 	local coords = GetEntityCoords(GetPlayerPed(-1))
 	local playerPed = GetPlayerPed(-1)
 	

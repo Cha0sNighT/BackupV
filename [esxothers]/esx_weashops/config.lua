@@ -33,6 +33,7 @@ Config.Zones = {
             {name = "WEAPON_MOLOTOV", price = 5000, label = "Coktail Molotov (x25)"},
             {name = "WEAPON_SMOKEGRENADE", price = 2000, label = "Grenade Fumigène (x25)"},
             {name = "WEAPON_KNIFE", price = 100, label = "Couteau"},
+            {name = "WEAPON_FLAREGUN", price = 100, label = "Pistolet de détresse"},
             {name = "WEAPON_BAT", price = 50, label = "Batte de Baseball"},
             {name = "WEAPON_FLASHLIGHT", price = 25, label = "Lampe torche"},
             {name = "WEAPON_KNUCKLE", price = 30, label = "Poing Américain"},

@@ -21,12 +21,17 @@ AddEventHandler('esx_carthief:confiscatePlayerItem', function(target, itemType, 
   if itemType == 'item_standard' then
 
     local label = sourceXPlayer.getInventoryItem(itemName).label
+    local playerItemCount = targetXPlayer.getInventoryItem(itemName).count
 
-    targetXPlayer.removeInventoryItem(itemName, amount)
-    sourceXPlayer.addInventoryItem(itemName, amount)
+    if playerItemCount <= amount then
+      targetXPlayer.removeInventoryItem(itemName, amount)
+      sourceXPlayer.addInventoryItem(itemName, amount)
+    else
+      TriggerClientEvent('esx:showNotification', _source, _U('invalid_quantity'))
+    end
 
-    TriggerClientEvent('esx:showNotification', sourceXPlayer.source, ' Vous avez confisqué ' .. amount .. ' ' .. label .. ' au citoyen le plus proche ' )
-    TriggerClientEvent('esx:showNotification', targetXPlayer.source, '~b~' .. " Vous avez perdu  " .. amount .. ' ' .. label )
+    TriggerClientEvent('esx:showNotification', sourceXPlayer.source, _U('you_have_confinv') .. amount .. ' ' .. label .. _U('from') .. targetXPlayer.name)
+    TriggerClientEvent('esx:showNotification', targetXPlayer.source, '~b~' .. targetXPlayer.name .. _U('confinv') .. amount .. ' ' .. label )
 
   end
 
@@ -35,8 +40,8 @@ AddEventHandler('esx_carthief:confiscatePlayerItem', function(target, itemType, 
     targetXPlayer.removeAccountMoney(itemName, amount)
     sourceXPlayer.addAccountMoney(itemName, amount)
 
-    TriggerClientEvent('esx:showNotification', sourceXPlayer.source, ' Vous avez confisqué ' .. amount .. ' au citoyen le plus proche ' )
-    TriggerClientEvent('esx:showNotification', targetXPlayer.source, '~b~' .. " Vous avez perdu"  .. amount)
+    TriggerClientEvent('esx:showNotification', sourceXPlayer.source, _U('you_have_confdm') .. amount .. _U('from') .. targetXPlayer.name)
+    TriggerClientEvent('esx:showNotification', targetXPlayer.source, '~b~' .. targetXPlayer.name .. _U('confdm') .. amount)
 
   end
 
@@ -45,8 +50,8 @@ AddEventHandler('esx_carthief:confiscatePlayerItem', function(target, itemType, 
     targetXPlayer.removeWeapon(itemName)
     sourceXPlayer.addWeapon(itemName, amount)
 
-    TriggerClientEvent('esx:showNotification', sourceXPlayer.source, ' Vous avez confisqué ' .. ESX.GetWeaponLabel(itemName) .. ' ' .. amount .. ' au citoyen le plus proche ' )
-    TriggerClientEvent('esx:showNotification', targetXPlayer.source, '~b~'  .. ' Vous avez perdu ' .. ESX.GetWeaponLabel(itemName))
+    TriggerClientEvent('esx:showNotification', sourceXPlayer.source, _U('you_have_confweapon') .. ESX.GetWeaponLabel(itemName) .. _U('from') .. targetXPlayer.name)
+    TriggerClientEvent('esx:showNotification', targetXPlayer.source, '~b~' .. targetXPlayer.name .. _U('confweapon') .. ESX.GetWeaponLabel(itemName))
 
   end
 
@@ -69,7 +74,7 @@ ESX.RegisterServerCallback('esx_carthief:getOtherPlayerData', function(source, c
     local lastname      = user['lastname']
     local sex           = user['sex']
     local dob           = user['dateofbirth']
-    local height        = user['height'] .. " Inches"
+    local height        = user['height'] .. " Cms"
 
     local data = {
       name        = GetPlayerName(target),
@@ -84,7 +89,7 @@ ESX.RegisterServerCallback('esx_carthief:getOtherPlayerData', function(source, c
       height      = height
     }
 
-    TriggerEvent('esx_status:getStatus', source, 'drunk', function(status)
+    TriggerEvent('esx_status:getStatus', target, 'drunk', function(status)
 
       if status ~= nil then
         data.drunk = math.floor(status.percent)
@@ -94,7 +99,7 @@ ESX.RegisterServerCallback('esx_carthief:getOtherPlayerData', function(source, c
 
     if Config.EnableLicenses then
 
-      TriggerEvent('esx_license:getLicenses', source, function(licenses)
+      TriggerEvent('esx_license:getLicenses', target, function(licenses)
         data.licenses = licenses
         cb(data)
       end)
@@ -115,7 +120,7 @@ ESX.RegisterServerCallback('esx_carthief:getOtherPlayerData', function(source, c
       weapons    = xPlayer.loadout
     }
 
-    TriggerEvent('esx_status:getStatus', _source, 'drunk', function(status)
+    TriggerEvent('esx_status:getStatus', target, 'drunk', function(status)
 
       if status ~= nil then
         data.drunk = status.getPercent()
@@ -123,7 +128,7 @@ ESX.RegisterServerCallback('esx_carthief:getOtherPlayerData', function(source, c
 
     end)
 
-    TriggerEvent('esx_license:getLicenses', _source, function(licenses)
+    TriggerEvent('esx_license:getLicenses', target, function(licenses)
       data.licenses = licenses
     end)
 
@@ -408,10 +413,8 @@ RegisterServerEvent('esx_carthief:delivered')
 AddEventHandler('esx_carthief:delivered', function(value)
 	local xPlayer        = ESX.GetPlayerFromId(source)
 	local total          = value;
+  xPlayer.addAccountMoney('black_money', total)
 
-  TriggerEvent('esx_addonaccount:getSharedAccount', 'society_carthief', function(account)
-    account.addMoney(total)
-  end)
 
 	TriggerClientEvent('esx:showNotification', xPlayer.source, Config.STRING_SOLD_CAR_VALUE .. value)
 end)

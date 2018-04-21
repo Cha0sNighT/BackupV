@@ -28,6 +28,7 @@ Config.Map = {
   {name = "LTD Gasoline" , color = 2 , id = 52 , x = 1163.373, y = -323.801, z = 68.245},
   {name = "LTD Gasoline" , color = 2 , id = 52 , x = -707.501, y = -914.260, z = 18.225},
   {name = "LTD Gasoline" , color = 2 , id = 52 , x = -1820.523, y = 792.518, z = 137.128},
-  {name = "LTD Gasoline" , color = 2 , id = 52 , x = 1698.388, y = 4924.404, z = 41.073}
+  {name = "LTD Gasoline" , color = 2 , id = 52 , x = 1698.388, y = 4924.404, z = 41.073},
+  {name = "Mairie" , color = 17 , id = 181, x = -544.92, y = -204.4, z = 37.23}
   --{name="SafeHouse",color=2, id=40,x=-107.8957366943, y=-8.305734634399, z=70.519645690918}
 }

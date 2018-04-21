@@ -1115,18 +1115,14 @@ function OpenPoliceActionsMenu()
             align    = 'top-left',
             elements = {
               {label = _U('id_card'),       value = 'identity_card'},
-              {label = 'Retirer permis Arme',            value = 'license_weapon_remove'},
-              {label = 'Retirer permis Moto',            value = 'license_moto_remove'},
-              {label = 'Retirer permis Camion',            value = 'license_camion_remove'},
-              {label = 'Retirer permis Voiture',            value = 'license_voiture_remove'},
-              {label = 'Retirer Code',            value = 'license_code_remove'},
+              {label = _U('license_check'), value = 'license'},
               {label = _U('search'),        value = 'body_search'},
               {label = _U('handcuff'),    value = 'handcuff'},
               {label = _U('drag'),      value = 'drag'},
               {label = _U('put_in_vehicle'),  value = 'put_in_vehicle'},
               {label = _U('out_the_vehicle'), value = 'out_the_vehicle'},
               {label = _U('fine'),            value = 'fine'},
-              {label = _U('specificfine'),		value = 'specificfine'},
+              {label = _U('specificfine'),    value = 'specificfine'},
               {label = 'Mise en Fédérale',    value = 'federal'}
             },
           },
@@ -1140,24 +1136,8 @@ function OpenPoliceActionsMenu()
                 OpenIdentityCardMenu(player)
               end
 
-              if data2.current.value == 'license_weapon_remove' then
-                  TriggerServerEvent('esx_policejob:deletelicense', GetPlayerServerId(player), 'weapon')
-              end
-
-              if data2.current.value == 'license_moto_remove' then
-                  TriggerServerEvent('esx_policejob:deletelicense', GetPlayerServerId(player), 'drive_bike')
-              end
-
-              if data2.current.value == 'license_camion_remove' then
-                  TriggerServerEvent('esx_policejob:deletelicense', GetPlayerServerId(player), 'drive_truck')
-              end
-
-              if data2.current.value == 'license_voiture_remove' then
-                  TriggerServerEvent('esx_policejob:deletelicense', GetPlayerServerId(player), 'drive')
-              end
-
-                if data2.current.value == 'license_code_remove' then
-                  TriggerServerEvent('esx_policejob:deletelicense', GetPlayerServerId(player), 'dmv')
+              if data2.current.value == 'license' then
+                  ShowPlayerLicense(player)
               end
 
               if data2.current.value == 'body_search' then
@@ -1185,7 +1165,7 @@ function OpenPoliceActionsMenu()
               end
 
               if data2.current.value == 'specificfine' then
-              	OpenSpecificFineMenu()
+                OpenSpecificFineMenu()
               end
 
               if data2.current.value == 'federal' then
@@ -1231,7 +1211,7 @@ function OpenPoliceActionsMenu()
               if data2.current.value == 'del_vehicle' then
                 CancelEvent()
                 TriggerEvent('wk:spawnTow', s)
-      		    end
+              end
 
               if data2.current.value == 'del_vehicle_c' then
                 CancelEvent()
@@ -1664,6 +1644,46 @@ function OpenFineCategoryMenu(player, category)
   end, category)
 
 end
+
+function ShowPlayerLicense(player)
+	local elements = {}
+	local targetName
+	ESX.TriggerServerCallback('esx_policejob:getOtherPlayerData', function(data)
+		if data.licenses ~= nil then
+			for i=1, #data.licenses, 1 do
+				if data.licenses[i].label ~= nil and data.licenses[i].type ~= nil then
+					table.insert(elements, {label = data.licenses[i].label, value = data.licenses[i].type})
+				end
+			end
+		end
+		
+		targetName = data.firstname .. ' ' .. data.lastname
+		
+		ESX.UI.Menu.Open(
+		'default', GetCurrentResourceName(), 'manage_license',
+		{
+			title    = _U('license_revoke'),
+			align    = 'top-left',
+			elements = elements,
+		},
+		function(data, menu)
+			TriggerEvent('esx:showNotification', _U('licence_you_revoked', data.current.label, targetName))
+			--TriggerEvent('esx:showNotification', GetPlayerServerId(player), _U('license_revoked', data.current.label))
+			
+			TriggerServerEvent('esx_license:removeLicense', GetPlayerServerId(player), data.current.value)
+			
+			ESX.SetTimeout(300, function()
+				ShowPlayerLicense(player)
+			end)
+		end,
+		function(data, menu)
+			menu.close()
+		end
+		)
+
+	end, GetPlayerServerId(player))
+end
+
 
 function OpenVehicleInfosMenu(vehicleData)
 
@@ -2181,6 +2201,9 @@ Citizen.CreateThread(function()
       DisableControlAction(0, 142, true) -- MeleeAttackAlternate
       DisableControlAction(0, 30,  true) -- MoveLeftRight
       DisableControlAction(0, 31,  true) -- MoveUpDown
+      DisableControlAction(0, 24,  true) -- Shoot 
+      DisableControlAction(0, 92,  true) -- Shoot in car
+      DisableControlAction(0, 75,  true) -- Leave Vehicle
     end
   end
 end)
@@ -2523,8 +2546,8 @@ Citizen.CreateThread(function()
       end
 
     end
-
-    if IsControlPressed(0,  Keys['F6']) and PlayerData.job ~= nil and PlayerData.job.name == 'police' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'police_actions') and (GetGameTimer() - GUI.Time) > 150 then
+    
+    if IsControlPressed(0,  Keys['F6']) and not isDead and PlayerData.job ~= nil and PlayerData.job.name == 'police' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'police_actions') and (GetGameTimer() - GUI.Time) > 150 then
       OpenPoliceActionsMenu()
       GUI.Time = GetGameTimer()
     end

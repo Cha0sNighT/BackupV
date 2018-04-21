@@ -10,20 +10,20 @@ Config = {
 
 Config.Garages = {
 	LSImport = {
-		Pos = {x= 1167.63, y= -1311.81, z= 34.74},
+		Pos = {x= 206.9, y= -999.15, z= -99.0},
 		Size  = {x = 1.0, y = 1.0, z = 1.0},
 		Color = {r=0,g=255,b=0},
 		Marker = 36,
 		SpawnPoint = {
-			Pos = {x= 1163.99, y= -1315.13, z= 34.75},
+			Pos = {x= 195.22, y= -1004.23, z= -99.57},
 			Color = {r=255,g=255,b=255},
 			Size  = {x = 3.0, y = 3.0, z = 1.0},
 			Marker = -1,
-			Heading = 176.0,
+			Heading = 139.5,
 			TP = true
 		},
 		DeletePoint = {
-			Pos = {x= 1163.99, y= -1315.13, z= 33.74},
+			Pos = {x= 202.48, y= -1004.48, z= -99.9},
 			Color = {r=255,g=0,b=0},
 			Size  = {x = 3.0, y = 3.0, z = 0.1},
 			Marker = 1
